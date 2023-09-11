@@ -10,8 +10,10 @@ export default {
         lightbg:"#648AFF",
         bgcolor:'#6C92FF',
         lightbg2:"#7294FF",
-        bluebtn:"#2c379e",
+        bluebtn:"#0038A5",
         bgall:"#F2F9FF",
+        bgcircle:"#0038A5",
+        bginput:"#d9e7fd",
       }
     },
   },
