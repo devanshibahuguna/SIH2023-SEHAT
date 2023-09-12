@@ -24,7 +24,7 @@ const Navbar = (props) => {
                     <div className=' w-[32px] h-[32px] top-[24px] left-[1256px] mr-4 '><GoHome/></div>
                     <div className=' w-[32px] h-[32px] top-[24px] left-[1256px] mr-4'><LuRefreshCcw/></div>
 
-                    {props.loginUser&&<div className=' w-[70px] h-[32px] top-[24px] left-[1256px] mr-4 text-[20px] font-[500] mt-[-4px]'><button className='flex justify-center items-center border-2 rounded-lg'>
+                    {props.loginUser&&<div className=' w-[70px] h-[32px] top-[24px] left-[1256px] mr-4 text-[20px] font-[500] mt-[-4px]'><button className='flex justify-center items-center border-2 rounded-lg bg-white text-black px-2'>
                       <IoMdLogOut/> <div className='text-[14px]'>Logout</div>
                       </button></div>}
 
