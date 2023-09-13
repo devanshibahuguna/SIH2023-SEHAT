@@ -16,7 +16,7 @@ const Navbar = (props) => {
                 </div>
                 </Link>
 
-                  {props.loginUser&&<div className='text-white mb-[-16px] text-[20px]'>
+                  {props.loginUser&&<div className='text-white mb-[-16px] ml-28 text-[20px]'>
                     {props.title}
                   </div>}
 

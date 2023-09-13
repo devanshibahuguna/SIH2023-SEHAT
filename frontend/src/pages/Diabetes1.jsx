@@ -5,7 +5,7 @@ import GlucoseImg from "../assets/GlucoseImg.svg";
 const Diabetes1 = () => {
   return (
     <div>
-    <Navbar url="/concern2" loginUser="true" title="Diabetes" />
+    <Navbar url="/concern1" loginUser="true" title="Diabetes" />
 
     <div className="w-[100vw]  flex flex-col items-center text-center font-bold bg-bgall h-[calc(100vh-100px)]">
       <div className="mt-24">

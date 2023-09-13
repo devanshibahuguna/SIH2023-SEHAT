@@ -24,4 +24,14 @@
         opacity: 0;
         transform:scale(0.7) translateY(10px);
     }
+}.selected,.notselected{
+    width: 200px;
+    background-color: #DEF0FF;
+    padding: 8px 0px;
+    margin: 16px 80px;
+    border-radius: 10px;
+}
+.selected{
+    color: white;
+    background-color:#0038A5;
 }

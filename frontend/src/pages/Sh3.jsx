@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import RecordVoice from '../components/RecordVoice';
+import RecordVoiceSkin from '../components/RecordVoiceSkin';
 
-const Diabetes3 = () => {
+const Sh3 = () => {
   return (
     <div>
-    <Navbar url="/DiabetesSugar" loginUser="true" title="Diabetes" />
+    <Navbar url="/skinProblem" loginUser="true" title="Skin Health" />
 
     <div className="w-[100vw]  flex flex-col items-center text-center font-bold bg-bgall h-[calc(100vh-100px)]">
     
@@ -18,11 +18,11 @@ const Diabetes3 = () => {
           </span>
         </div>
 
-        <RecordVoice/>
+        <RecordVoiceSkin/>
       </div>
 
       {/* button */}
-      <Link to="/DiabetesConnect">
+      <Link to="/skinDoctor">
         <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg ">
           Proceed
         </button>
@@ -32,4 +32,4 @@ const Diabetes3 = () => {
   )
 }
 
-export default Diabetes3
+export default Sh3
