@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function ButtonSelectSkin() {
-    const[color,setColor]=useState(false);
+  const [color, setColor] = useState(false);
   const [selectedButtons, setSelectedButtons] = useState([]);
 
   // Function to handle button clicks
@@ -19,7 +19,7 @@ function ButtonSelectSkin() {
   };
 
   // An array of button values
-  const buttonValues = ["Button 1", "Button 2", "Button 3","Button 4","Button 5","Button 6","Button 7","Button 8","Button 9","Button 10","Button 11","Button 12"];
+  const buttonValues = ["Button 1", "Button 2", "Button 3", "Button 4", "Button 5", "Button 6", "Button 7", "Button 8", "Button 9", "Button 10", "Button 11", "Button 12"];
 
   return (
     <div className='mt-10'>

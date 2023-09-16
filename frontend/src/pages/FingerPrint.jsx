@@ -12,11 +12,11 @@ const FingerPrint = () => {
 
           {/* circles */}
             <div className='flex mt-12 mb-6'>
-              <div className='bg-gray-300 w-[15px] h-[15px] top-[160px] left-[668px] rounded-full '></div>
+              <div className='bg-gray-300 w-[12px] h-[12px] top-[160px] left-[668px] rounded-full '></div>
 
-            <div className='bg-bluebtn w-[15px] h-[15px] top-[60px] left-[668px] mx-8 rounded-full '></div>
+            <div className='bg-bluebtn w-[12px] h-[12px] top-[60px] left-[668px] mx-8 rounded-full '></div>
 
-            <div className='bg-gray-300 w-[15px] h-[15px] top-[60px] left-[668px] rounded-full '></div>
+            <div className='bg-gray-300 w-[12px] h-[12px] top-[60px] left-[668px] rounded-full '></div>
 
             </div>
 

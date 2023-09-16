@@ -11,7 +11,7 @@ const Navbar = (props) => {
     <div>
       <div className='bg-bgcolor w-full h-[100px] flex items-center justify-between '>
         <Link to={props.url}>
-          <div className='w-[40px] h-[40px] top-[20px] left-[100px] bg-gray-300 rounded-full flex justify-center items-center ml-14'>
+          <div className='w-[40px] h-[40px] top-[20px] left-[100px] bg-white rounded-full flex justify-center items-center ml-14'>
             <FaArrowLeft />
           </div>
         </Link>

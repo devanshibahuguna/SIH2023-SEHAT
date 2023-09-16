@@ -10,11 +10,11 @@ const Login = () => {
 
         {/* circles */}
         <div className='flex mt-12'>
-          <div className='bg-bgcircle w-[16px] h-[16px] top-[160px] left-[668px] rounded-full '></div>
+          <div className='bg-bgcircle w-[12px] h-[12px] top-[160px] left-[668px] rounded-full '></div>
 
-          <div className='bg-gray-300 w-[16px] h-[16px] top-[60px] left-[668px] mx-8 rounded-full '></div>
+          <div className='bg-gray-300 w-[12px] h-[12px] top-[60px] left-[668px] mx-8 rounded-full '></div>
 
-          <div className='bg-gray-300 w-[16px] h-[16px] top-[60px] left-[668px] rounded-full '></div>
+          <div className='bg-gray-300  w-[12px] h-[12px] top-[60px] left-[668px] rounded-full '></div>
 
         </div>
 
@@ -26,7 +26,7 @@ const Login = () => {
           <div className='text-[17px]'>Enter your Aadhar number</div>
           <form action="/fingerPrint">
             <input type="text" required={true}
-              className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4"
+              className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
               placeholder="xxxx-xxxx-xxxx-xxxx"
             />
             <button type='submit' className='bg-bluebtn rounded-lg px-8 py-2 my-10 text-white font-[100] '>Proceed</button>
