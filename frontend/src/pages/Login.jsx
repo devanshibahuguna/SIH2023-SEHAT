@@ -24,16 +24,16 @@ const Login = () => {
 
         <div className='mt-16'>
           <div className='text-[17px]'>Enter your Aadhar number</div>
-          <input type="text" required={true}
-            className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4"
-            placeholder="xxxx-xxxx-xxxx-xxxx"
-          />
+          <form action="/fingerPrint">
+            <input type="text" required={true}
+              className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4"
+              placeholder="xxxx-xxxx-xxxx-xxxx"
+            />
+            <button type='submit' className='bg-bluebtn rounded-lg px-8 py-2 my-10 text-white font-[100] '>Proceed</button>
+          </form>
 
         </div>
 
-        <Link to='/fingerPrint'>
-          <button className='bg-bluebtn rounded-lg px-8 py-2 my-10 text-white font-[100] '>Proceed</button>
-        </Link>
 
       </div>
     </div>

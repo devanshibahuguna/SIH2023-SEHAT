@@ -26,7 +26,7 @@ const FingerPrint = () => {
 
             <Link to='/irisScan'>
               <button className='w-[204px] h-[250px] top-[364px] left-[593px]'>
-                <img src={fingerPrintPic}/>
+                <img src={fingerPrintPic}  className='hover:drop-shadow-lg'/>
               </button>
             </Link>
 

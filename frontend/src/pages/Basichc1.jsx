@@ -22,7 +22,7 @@ const Basichc1 = () => {
           <div>
             <img src={bhc11} />
           </div>
-          <div className="mx-[-40px]">
+          <div className="mx-[-160px]">
             <img src={bhc12} />
           </div>
           <div>

@@ -26,7 +26,7 @@ const IrisScan = () => {
 
         <Link to='/loginSuccess'>
           <button className='w-[204px] h-[250px] top-[364px] left-[593px]'>
-            <img src={irisScanPic}/>
+            <img src={irisScanPic}  className='hover:drop-shadow-lg'/>
           </button>
         </Link>
 
