@@ -29,7 +29,7 @@ const FrontPage = () => {
         <div>
         <div className='font-bold text-white text-center text-[40px] mt-[-80px] mb-[10px]'>SEHAT</div>
 
-            <div className='w-[669px] h-[25px] top-[686px] left-[386px] font-[500] text-[22px] leading-[25px] text-white text-center mb-[30px]'>
+            <div className='z-auto w-[669px] h-[25px] top-[686px] left-[386px] font-[500] text-[22px] leading-[25px] text-white text-center mb-[30px]'>
             System for Enhanced Healthcare Assistance & Telemedicine
             </div>
         </div>
@@ -45,7 +45,7 @@ const FrontPage = () => {
         <Link to='/selectCase' className='bg-bluebtn w-[272px] h-[52px] top-[821px] left-[580px] rounded-[10px] text-white flex flex-col justify-center items-center'>Get Started</Link>
 
         {/* concentric circles */}
-        <div className='bg-lightbg w-[567.61px] h-[558px] top-[400px] left-[1053px] fixed rounded-full'>
+        <div className='bg-lightbg w-[567.61px] h-[558px] top-[400px] left-[1053px] fixed rounded-full -z-1 '>
             <div className='bg-lightbg2 w-[367.61px] h-[358px] top-[500px] left-[1153px] fixed rounded-full'></div>
         </div>
         

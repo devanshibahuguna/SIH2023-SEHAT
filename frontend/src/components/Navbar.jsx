@@ -9,7 +9,7 @@ const Navbar = (props) => {
 
   return (
     <div>
-        <div className='bg-bgcolor w-[1440px] h-[100px] flex items-center justify-between '>
+        <div className='bg-bgcolor w-full h-[100px] flex items-center justify-between '>
         <Link to={props.url}> 
                 <div className='w-[40px] h-[40px] top-[20px] left-[100px] bg-gray-300 rounded-full flex justify-center items-center ml-14'>
                    <FaArrowLeft/>
@@ -31,7 +31,7 @@ const Navbar = (props) => {
                 </div>
             </div>
 
-            <div className='w-[1440px] h-[20px] mt-[-20px] rounded-t-full bg-bgall'>
+            <div className='w-full h-[20px] mt-[-20px] rounded-t-full bg-bgall'>
             </div>
     </div>
   )
