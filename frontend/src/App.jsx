@@ -27,6 +27,14 @@ import Sh3 from "./pages/Sh3";
 import Sh4 from "./pages/Sh4";
 import HeartProblem from "./pages/HeartProblem";
 import HeartInputs from "./pages/HeartInputs";
+import Diabetes5 from "./pages/Diabetes5";
+import Diabetes6 from "./pages/Diabetes6";
+import Diabetes7 from "./pages/Diabetes7";
+import CataractImage from "./pages/CataractImage";
+import CataractDoctor from "./pages/CataractDoctor";
+import Emergency from "./pages/Emergency";
+import DiabetesDoctor from "./pages/DiabetesDoctor";
+import DiabetesAudio from "./pages/DiabetesAudio";
 function App() {
   return (
     <BrowserRouter>
@@ -45,10 +53,13 @@ function App() {
         <Route path="/bhcHeartbeat" element={<Basichc5 />} />
         <Route path="/bhcSPO2" element={<Basichc6 />} />
         <Route path="/bhcBP" element={<Basichc7 />} />
-        <Route path="/DiabetesGlucose" element={<Diabetes1/>} />
-        <Route path="/DiabetesSugar" element={<Diabetes2/>} />
-        <Route path="/DiabetesRecord" element={<Diabetes3/>} />
-        <Route path="/DiabetesConnect" element={<Diabetes4/>} />
+        <Route path="/Diabetes1" element={<Diabetes1/>} />
+        <Route path="/Diabetes2" element={<Diabetes2/>} />
+        <Route path="/Diabetes3" element={<Diabetes3/>} />
+        <Route path="/Diabetes4" element={<Diabetes4/>} />
+        <Route path="/Diabetes5" element={<Diabetes5/>} />
+        <Route path="/Diabetes6" element={<Diabetes6/>} />
+        <Route path="/Diabetes7" element={<Diabetes7/>} />
         <Route path="/body" element={<Bh1/>} />
         <Route path="/bodyProblem" element={<Bh2/>} />
         <Route path="/bodyRecord" element={<Bh3/>} />
@@ -59,6 +70,12 @@ function App() {
         <Route path="/skinDoctor" element={<Sh4/>} />
         <Route path="/healthProblem" element={<HeartProblem/>} />
         <Route path="/heartInputs" element={<HeartInputs/>} />
+        <Route path="/cataractImage" element={<CataractImage/>} />
+        <Route path="/cataractDoctor" element={<CataractDoctor/>} />
+        <Route path="/cataractDoctor" element={<CataractDoctor/>} />
+        <Route path="/emergency" element={<Emergency/>} />
+        <Route path="/diabetesAudioRecord" element={<DiabetesAudio/>} />
+        <Route path="/diabetesDoctor" element={<DiabetesDoctor/>} />
 
       </Routes>
     </BrowserRouter>

@@ -1,28 +1,35 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import RecordVoice from '../components/RecordVoice';
+import Diabetes from "../assets/Diabetes3.svg";
 
 const Diabetes3 = () => {
   return (
     <div>
-    <Navbar url="/DiabetesSugar" loginUser="true" title="Diabetes" />
+    <Navbar url="/Diabetes2" loginUser="true" title="Diabetes Checkup" />
 
     <div className="w-[100vw]  flex flex-col items-center text-center font-bold bg-bgall h-[calc(100vh-100px)]">
-    
+      <div className="mt-24">
+        <img src={Diabetes} />
+      </div>
 
       <div className="w-[1440px] mt-[60px] top-[160px] flex flex-col justify-center items-center">
         <div className="">
           <span className="mr-2 font-[600] text-[18px]">
-            Please record your concern
+            Enter Blood Pressure
           </span>
         </div>
 
-        <RecordVoice/>
+        <div className="flex justc  items-center">
+          <input
+            type="text"
+            className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4"
+          />
+        </div>
       </div>
 
       {/* button */}
-      <Link to="/DiabetesConnect">
+      <Link to="/Diabetes4">
         <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg ">
           Proceed
         </button>

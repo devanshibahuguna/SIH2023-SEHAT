@@ -6,7 +6,7 @@ import weightImg from "../assets/WeightImg.svg";
 const Basichc3 = () => {
   return (
     <div>
-      <Navbar url="/bhcHeight" loginUser="true" title="Basic Health Checkup" />
+      <Navbar url="/bhcHeight" loginUser="true" title="General Checkup" />
 
       <div className="w-[100vw]  flex flex-col items-center text-center font-bold bg-bgall h-[calc(100vh-100px)]">
         <div className="mt-24">

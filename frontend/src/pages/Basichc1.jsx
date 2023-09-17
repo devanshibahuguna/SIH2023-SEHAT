@@ -9,7 +9,7 @@ import bhc13 from "../assets/bhc13.svg";
 const Basichc1 = () => {
   return (
     <div>
-      <Navbar url="/concern2" loginUser="true" title="Basic Health Checkup" />
+      <Navbar url="/concern1" loginUser="true" title="General Checkup" />
 
       <div className="w-[100vw]  flex flex-col items-center text-center font-bold bg-bgall h-[calc(100vh-100px)]">
         {/* big pic */}

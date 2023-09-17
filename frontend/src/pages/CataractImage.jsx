@@ -1,14 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import PicUser from '../components/PicUser';
-import DragDropFiles from '../components/DragDropFilesSkin';
+import DragDropFilesCataract from '../components/DragDropFilesCataract';
 
-
-const Sh1 = () => {
+const CataractImage = () => {
   return (
     <div>
-    <Navbar url="/concern1" loginUser="true" title="Skin Health" />
+    <Navbar url="/concern1" loginUser="true" title="Cataract Checkup" />
 
     <div className="w-[100vw]  flex flex-col items-center text-center font-bold bg-bgall h-[calc(100vh-100px)]">
     
@@ -21,15 +19,12 @@ const Sh1 = () => {
         </div>
       </div>
 
-      {/* for image capturing */}
-    {/* <PicUser/> */}
-
 {/* for drag and drop */}
-<DragDropFiles/>
+<DragDropFilesCataract/>
 
 
       {/* button */}
-      <Link to="/skinProblem">
+      <Link to="/cataractDoctor">
         <button className="mt-[7px] fixed right-[60px] bottom-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg">
           Proceed
         </button>
@@ -39,4 +34,4 @@ const Sh1 = () => {
   )
 }
 
-export default Sh1
+export default CataractImage

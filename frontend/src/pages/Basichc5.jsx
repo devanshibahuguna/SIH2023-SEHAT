@@ -5,7 +5,7 @@ import HeartBeatImg from "../assets/HeartbeatImg.svg";
 const Basichc5 = () => {
   return (
     <div>
-      <Navbar url="/bhcTemp" loginUser="true" title="Basic Health Checkup" />
+      <Navbar url="/bhcTemp" loginUser="true" title="General Checkup" />
 
       <div className="w-[100vw]  flex flex-col items-center text-center font-bold bg-bgall h-[calc(100vh-100px)]">
         <div className="mt-24">

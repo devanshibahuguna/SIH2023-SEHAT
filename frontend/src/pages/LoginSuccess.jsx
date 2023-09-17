@@ -7,7 +7,7 @@ function LoginSuccess() {
     // Set a timeout to redirect after a few seconds (e.g., 3 seconds)
     const redirectTimer = setTimeout(() => {
       window.location.href = '/concern1'; // Change the URL to redirect to the desired route
-    }, 3000); // 3000 milliseconds = 3 seconds
+    }, 2000); // 3000 milliseconds = 3 seconds
 
     // Clean up the timer when the component unmounts
     return () => clearTimeout(redirectTimer);

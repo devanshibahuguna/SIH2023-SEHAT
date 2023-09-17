@@ -15,7 +15,7 @@ const SelectCase = () => {
           <div className='flex justify-between items-baseline mt-[60px]'>
 
             <div>
-              <Link to='/login'>
+              <Link to='/emergency'>
                 <img className='hover:drop-shadow-lg' src={emergency} alt='emergency' />
                 <div className='mt-6'>Emergency</div>
               </Link>

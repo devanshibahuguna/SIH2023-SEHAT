@@ -8,7 +8,7 @@ const Basichc2 = () => {
       <Navbar
         url="/bhcInfo"
         loginUser="true"
-        title="Basic Health Checkup"
+        title="General Checkup"
       />
 
       <div className="w-[100vw]  flex flex-col items-center text-center font-bold bg-bgall h-[calc(100vh-100px)]">

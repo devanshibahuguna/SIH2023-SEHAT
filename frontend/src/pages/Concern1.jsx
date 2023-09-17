@@ -23,7 +23,7 @@ const Concern1 = () => {
           </div>
 
           <div className='flex flex-col justify-center items-center mr-16'>
-            <Link to='/'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>
+            <Link to='/skinRecord'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>
             <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Skin Checkup</div>
           </div>
 
@@ -35,7 +35,7 @@ const Concern1 = () => {
         <div className='flex justify-between mt-10'>
 
 <div className='flex flex-col justify-center items-center'>
-  <Link to='/'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>
+  <Link to='/Diabetes1'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>
   <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Diabetes Checkup</div>
 </div>
 
@@ -45,7 +45,7 @@ const Concern1 = () => {
 </div>
 
 <div className='flex flex-col justify-center items-center mr-16'>
-  <Link to='/'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>
+  <Link to='/cataractImage'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>
   <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Cataract Checkup</div>
 </div>
 
