@@ -25,6 +25,8 @@ import Sh1 from "./pages/Sh1";
 import Sh2 from "./pages/Sh2";
 import Sh3 from "./pages/Sh3";
 import Sh4 from "./pages/Sh4";
+import HeartProblem from "./pages/HeartProblem";
+import HeartInputs from "./pages/HeartInputs";
 function App() {
   return (
     <BrowserRouter>
@@ -55,6 +57,8 @@ function App() {
         <Route path="/skinProblem" element={<Sh2/>} />
         <Route path="/skinAudioRecord" element={<Sh3/>} />
         <Route path="/skinDoctor" element={<Sh4/>} />
+        <Route path="/healthProblem" element={<HeartProblem/>} />
+        <Route path="/heartInputs" element={<HeartInputs/>} />
 
       </Routes>
     </BrowserRouter>
