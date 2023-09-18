@@ -1,6 +1,10 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import ConsultDoctor from '../assets/ConsultDoctor.svg';
+import general from '../assets/General.svg';
+import diabetes from '../assets/Diabetes.svg';
+import heart from '../assets/Heart.svg';
+import cataract from '../assets/Cataract.svg';
 import { Link } from 'react-router-dom';
 const Concern1 = () => {
   return (
@@ -13,12 +17,12 @@ const Concern1 = () => {
         <div className='flex justify-between mt-10'>
 
           <div className='flex flex-col justify-center items-center'>
-            <Link to='/bhcInfo'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>
+            <Link to='/bhcInfo'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={general} /></Link>
             <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>General Checkup</div>
           </div>
 
           <div className='flex flex-col justify-center items-center mx-36'>
-  <Link to='/Diabetes1'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>
+  <Link to='/Diabetes1'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={diabetes} /></Link>
   <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Diabetes Checkup</div>
 </div>
 
@@ -37,12 +41,12 @@ const Concern1 = () => {
 
 
 <div className='flex flex-col justify-center items-center mx-36'>
-  <Link to='/healthProblem'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>
+  <Link to='/healthProblem'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={heart} /></Link>
   <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Heart Checkup</div>
 </div>
 
 <div className='flex flex-col justify-center items-center mr-16'>
-  <Link to='/cataractImage'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>
+  <Link to='/cataractImage'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={cataract} /></Link>
   <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Cataract Checkup</div>
 </div>
 
