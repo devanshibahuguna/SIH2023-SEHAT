@@ -24,17 +24,18 @@ const HeartProblem = () => {
 
           <div className='flex flex-col justify-center items-center mx-16'>
             <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-            <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Unexpected fatigue</div>
+            <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Shortness of Breath</div>
           </div>
 
           <div className='flex flex-col justify-center items-center mr-16'>
             <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-            <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Family history</div>
+            <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Fatigue
+</div>
           </div>
 
           <div className='flex flex-col justify-center items-center mr-16'>
             <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-            <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Rapid/irregular heartbeat</div>
+            <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Rapid Heartbeat </div>
           </div>
           
         </div>
@@ -45,22 +46,23 @@ const HeartProblem = () => {
 
 <div className='flex flex-col justify-center items-center'>
   <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-  <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Chest pain</div>
+  <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Nausea </div>
 </div>
 
 <div className='flex flex-col justify-center items-center mx-16'>
   <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-  <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Unexpected fatigue</div>
+  <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Cold Sweats
+</div>
 </div>
 
 <div className='flex flex-col justify-center items-center mr-16'>
   <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-  <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Family history</div>
+  <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>High Blood Pressure </div>
 </div>
 
 <div className='flex flex-col justify-center items-center mr-16'>
   <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-  <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Rapid/irregular heartbeat</div>
+  <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Fainting </div>
 </div>
 
 </div>
