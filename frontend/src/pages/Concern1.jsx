@@ -18,9 +18,9 @@ const Concern1 = () => {
           </div>
 
           <div className='flex flex-col justify-center items-center mx-36'>
-            <Link to='/body'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>
-            <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Body Checkup</div>
-          </div>
+  <Link to='/Diabetes1'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>
+  <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Diabetes Checkup</div>
+</div>
 
           <div className='flex flex-col justify-center items-center mr-16'>
             <Link to='/skinRecord'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>
@@ -34,10 +34,7 @@ const Concern1 = () => {
         {/* second row */}
         <div className='flex justify-between mt-10'>
 
-<div className='flex flex-col justify-center items-center'>
-  <Link to='/Diabetes1'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>
-  <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Diabetes Checkup</div>
-</div>
+
 
 <div className='flex flex-col justify-center items-center mx-36'>
   <Link to='/healthProblem'><img className='w-[207px] h-[224px] top-[280px] left-[222px] hover:drop-shadow-lg' src={ConsultDoctor} /></Link>

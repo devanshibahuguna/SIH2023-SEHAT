@@ -30,7 +30,7 @@ const Basichc7 = () => {
         </div>
 
         {/* button */}
-        <Link to="/bhcBP">
+        <Link to="/bodyProblem">
           <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg ">
             Proceed
           </button>

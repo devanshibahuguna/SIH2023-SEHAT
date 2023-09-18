@@ -6,7 +6,7 @@ import RecordVoiceBody from '../components/RecordVoiceBody';
 const Bh3 = () => {
   return (
     <div>
-    <Navbar url="/bodyProblem" loginUser="true" title="Body Health" />
+    <Navbar url="/body" loginUser="true" title="Body Health" />
 
     <div className="w-[100vw]  flex flex-col items-center text-center font-bold bg-bgall h-[calc(100vh-100px)]">
      
