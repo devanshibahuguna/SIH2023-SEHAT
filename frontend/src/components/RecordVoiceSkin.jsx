@@ -43,10 +43,13 @@ function RecordVoiceSkin() {
     <div className="audio-recorder">
       {isRecording ? (
         <>
+        <div>
+          <div className='flex mt-[5px] items-center justify-center'><img src="https://gifdb.com/images/high/sound-bar-sound-wave-xi3hsaiw59ojqnak.gif" width={50} height={50} alt="" /><img src="https://gifdb.com/images/high/sound-bar-sound-wave-xi3hsaiw59ojqnak.gif" width={50} height={50} alt="" /><img src="https://gifdb.com/images/high/sound-bar-sound-wave-xi3hsaiw59ojqnak.gif" width={50} height={50} alt="" /></div>
           <p className='mt-4'>Recording...</p>
           <Button className='bg-[#DEF0FF] px-8 py-2 rounded-lg mt-20' variant="danger" onClick={stopRecording}>
             Stop Recording
           </Button>
+          </div>
         </>
       ) : (
         <Button className='bg-[#DEF0FF] px-8 py-2 rounded-lg mt-20' variant="success" onClick={startRecording}>

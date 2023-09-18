@@ -23,38 +23,41 @@ function Forgot_password() {
 
   return (
     <div>
-        <div className="forgot_body">
-          <div className="forgot_head ">OTP Verification</div>
-          <div className="forgot_cont">
-            Enter the code sent to your registered Phone number
-          </div>
-          <div className="boxes_otp">
+      <div className="forgot_body">
+        <div className="forgot_head ">OTP Verification</div>
+        <div className="forgot_cont">
+          Enter the code sent to your registered Phone number
+        </div>
+        <div className="boxes_otp  flex">
           {Otp.map((data, index) => {
             return (
-              <input
-                type="text"
-                maxLength="1"
-                className="input_otp"
-                key={index}
-                value={data}
-                onChange={(e) => handleChange(e.target, index)}
-                onFocus={(e) => e.target.select()}
-                required/>
+              <div>
+                <input
+                  // className='fle'
+                  type="text"
+                  maxLength="1"
+                  className="input_otp"
+                  key={index}
+                  value={data}
+                  onChange={(e) => handleChange(e.target, index)}
+                  onFocus={(e) => e.target.select()}
+                  required />
+              </div>
             );
           })}
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <Link to='/fingerPrint'>
-              <div className="forgot_btn bg-bluebtn rounded-lg w-[200px] py-2 my-4 text-white font-[100] ">Verify OTP</div>
-            </Link>
-          </div>
-          <div className="timer">
-            <div className="written">Resend OTP in 00 : {counter}</div>
-            <a href="/" className="forgot_resend">
-              Resend OTP ?
-            </a>
-          </div>{" "}
         </div>
+        <div className="flex flex-col justify-center items-center">
+          <Link to='/fingerPrint'>
+            <div className="forgot_btn bg-bluebtn rounded-lg w-[200px] py-2 my-4 text-white font-[100] ">Verify OTP</div>
+          </Link>
+        </div>
+        <div className="timer">
+          <div className="written">Resend OTP in 00 : {counter}</div>
+          <a href="/" className="forgot_resend">
+            Resend OTP ?
+          </a>
+        </div>{" "}
+      </div>
     </div>
   );
 }
