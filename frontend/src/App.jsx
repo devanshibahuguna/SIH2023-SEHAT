@@ -35,10 +35,12 @@ import CataractDoctor from "./pages/CataractDoctor";
 import Emergency from "./pages/Emergency";
 import DiabetesDoctor from "./pages/DiabetesDoctor";
 import DiabetesAudio from "./pages/DiabetesAudio";
+import NoteState from "./context/notes/NoteState";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <NoteState>
         <Route path="/" element={<FrontPage />} />
         <Route path="/selectCase" element={<SelectCase />} />
         <Route path="/login" element={<Login />} />
@@ -76,7 +78,7 @@ function App() {
         <Route path="/emergency" element={<Emergency/>} />
         <Route path="/diabetesAudioRecord" element={<DiabetesAudio/>} />
         <Route path="/diabetesDoctor" element={<DiabetesDoctor/>} />
-
+        </NoteState>
       </Routes>
     </BrowserRouter>
   );
