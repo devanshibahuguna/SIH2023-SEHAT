@@ -3,26 +3,46 @@ import maleBody from '../assets/MaleBody.svg';
 
 const MaleBody = () => {
   return (
-    <div>
-        <img src={maleBody}/>
-
-        <button value='shoulder' className='fixed top-[240px] left-[400px] bg-bluebtn text-white px-4 py-1 rounded-lg'>Shoulder</button>
-
-        <button value='arm' className='fixed top-[360px] left-[360px] bg-bluebtn text-white px-4 py-1 rounded-lg'>Arm</button>
-
-        <button value='chest' className='fixed top-[270px] left-[520px] bg-bluebtn text-white px-4 py-1 rounded-lg'>Chest</button>
-
-        <button value='stomach' className='fixed top-[360px] left-[500px] bg-bluebtn text-white px-4 py-1 rounded-lg'>Stomach</button>
-
-        <button value='thigh' className='fixed top-[470px] left-[530px] bg-bluebtn text-white px-4 py-1 rounded-lg'>Thigh</button>
-
-        <button value='leg' className='fixed top-[620px] left-[420px] bg-bluebtn text-white px-4 py-1 rounded-lg'>Leg</button>
-
-        <button value='neck' className='fixed top-[210px] left-[940px] bg-bluebtn text-white px-4 py-1 rounded-lg'>Neck</button>
-
-        <button value='back' className='fixed top-[310px] left-[910px] bg-bluebtn text-white px-4 py-1 rounded-lg'>Back</button>
+    <div className='flex gap-20'>
+      <div className='fle fle-col gap-16'>
+        <div className='flex mt-[100px] items-center justify-center'>
+          <div value='Shoulder' className='bg-bluebtn py-2  text-white rounded-lg px-4 cursor-pointer'>Shoulder</div>
+          <hr class="ml-72 w-48 border border-black absolute" />
+        </div>
+        <div className='flex mt-[4px] items-center justify-center'>
+          <div value='Chest' className='bg-bluebtn py-2  text-white rounded-lg px-4 cursor-pointer'>Chest</div>
+          <hr class="ml-72 w-52 border border-black absolute" />
+        </div>
+        <div className='flex mt-[4px] items-center justify-center'>
+          <div value='Arm' className='bg-bluebtn py-2  text-white rounded-lg px-4 cursor-pointer'>Arm</div>
+          <hr class="ml-48 w-40 border border-black absolute" />
+        </div>
+        <div className='flex mt-[2px] items-center justify-center'>
+          <div value='Stomach' className='bg-bluebtn py-2  text-white rounded-lg px-4 cursor-pointer'>Stomach</div>
+          <hr class="ml-80 w-56 border border-black absolute" />
+        </div>
+        <div className='flex mt-[32px] items-center justify-center'>
+          <div value='Thigh' className='bg-bluebtn py-2  text-white rounded-lg px-4 cursor-pointer'>Thigh</div>
+          <hr class="ml-72 w-56 border border-black absolute" />
+        </div>
+        <div className='flex mt-[100px] items-center justify-center'>
+          <div value='Leg' className='bg-bluebtn py-2  text-white rounded-lg px-4 cursor-pointer'>Leg</div>
+          <hr class="ml-64 w-52 border border-black absolute" />
+        </div>
+      </div>
+      <img src={maleBody} alt="Male Body" />
+      <div>
+        <div className='flex mt-[76px] items-center justify-center'>
+          <hr class="mr-[330px] w-[250px] border border-black absolute" />
+          <div value='Neck' className='bg-bluebtn py-2  text-white rounded-lg px-4 cursor-pointer'>Neck</div>
+        </div>
+        <div className='flex mt-[76px] items-center justify-center'>
+          <hr class="mr-[330px] w-[250px] border border-black absolute" />
+          <div value='Back' className='bg-bluebtn py-2  text-white rounded-lg px-4 cursor-pointer'>Back</div>
+        </div>
+      </div>
     </div>
   )
 }
 
-export default MaleBody
+export default MaleBody;

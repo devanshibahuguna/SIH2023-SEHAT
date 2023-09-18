@@ -3,9 +3,14 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import PicUser from '../components/PicUser';
 import DragDropFiles from '../components/DragDropFilesSkin';
-
+import QRCode from 'qrcode.react';
 
 const Sh1 = () => {
+
+  // Replace 'https://yourwebsite.com' with your actual website URL.
+  const websiteUrl = 'https://yourwebsite.com';
+
+
   return (
     <div>
     <Navbar url="/concern1" loginUser="true" title="Skin Health" />
@@ -25,8 +30,23 @@ const Sh1 = () => {
     {/* <PicUser/> */}
 
 {/* for drag and drop */}
-<DragDropFiles/>
+{/* <DragDropFiles/> */}
 
+
+<div className='my-12 text-[18px]'>Select Files</div>
+
+<div className='flex justify-between mt-[-100px]'>
+  <div>
+    <DragDropFiles/>
+  </div>
+  <div className='flex justify-center items-center mx-40'>
+    OR
+  </div>
+  <div className='mt-[40px] flex justify-center flex-col items-center'>
+  <h1 className='mb-4'>Generate QR Code for Your Website</h1>
+      <QRCode value={websiteUrl} />
+  </div>
+</div>
 
       {/* button */}
       <Link to="/skinProblem">

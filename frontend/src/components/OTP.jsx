@@ -36,23 +36,26 @@ function Forgot_password() {
 
   return (
     <div>
-        <div className="forgot_body">
-          <div className="forgot_head ">OTP Verification</div>
-          <div className="forgot_cont">
-            Enter the code sent to your registered Phone number
-          </div>
-          <div className="boxes_otp">
+      <div className="forgot_body">
+        <div className="forgot_head ">OTP Verification</div>
+        <div className="forgot_cont">
+          Enter the code sent to your registered Phone number
+        </div>
+        <div className="boxes_otp  flex">
           {Otp.map((data, index) => {
             return (
-              <input
-                type="text"
-                maxLength="1"
-                className="input_otp"
-                key={index}
-                value={data}
-                onChange={(e) => handleChange(e.target, index)}
-                onFocus={(e) => e.target.select()}
-                required/>
+              <div>
+                <input
+                  // className='fle'
+                  type="text"
+                  maxLength="1"
+                  className="input_otp"
+                  key={index}
+                  value={data}
+                  onChange={(e) => handleChange(e.target, index)}
+                  onFocus={(e) => e.target.select()}
+                  required />
+              </div>
             );
           })}
           </div>

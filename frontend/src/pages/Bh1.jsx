@@ -6,7 +6,7 @@ import MaleBody from '../components/MaleBody';
 const Bh1 = () => {
   return (
     <div>
-    <Navbar url="/concern1" loginUser="true" title="Body Health" />
+    <Navbar url="/bodyProblem" loginUser="true" title="Body Health" />
 
     <div className="w-[100vw]  flex flex-col items-center text-center font-bold bg-bgall h-[calc(100vh-100px)]">
       
@@ -24,7 +24,7 @@ const Bh1 = () => {
       </div>
 
       
-      <Link to="/bodyProblem">
+      <Link to="/bodyRecord">
         <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg fixed bottom-[50px] right-[50px] ">
           Next
         </button>

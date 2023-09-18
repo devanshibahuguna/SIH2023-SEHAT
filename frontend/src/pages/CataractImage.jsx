@@ -2,8 +2,13 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import DragDropFilesCataract from '../components/DragDropFilesCataract';
+import QRCode from 'qrcode.react';
 
 const CataractImage = () => {
+
+ // Replace 'https://yourwebsite.com' with your actual website URL.
+ const websiteUrl = 'https://yourwebsite.com';
+
   return (
     <div>
     <Navbar url="/concern1" loginUser="true" title="Cataract Checkup" />
@@ -20,7 +25,22 @@ const CataractImage = () => {
       </div>
 
 {/* for drag and drop */}
-<DragDropFilesCataract/>
+{/* <DragDropFilesCataract/> */}
+
+<div className='my-12 text-[18px]'>Select Files</div>
+
+<div className='flex justify-between mt-[-100px]'>
+  <div>
+    <DragDropFilesCataract/>
+  </div>
+  <div className='flex justify-center items-center mx-40'>
+    OR
+  </div>
+  <div className='mt-[40px] flex justify-center flex-col items-center'>
+  <h1 className='mb-4'>Generate QR Code for Your Website</h1>
+      <QRCode value={websiteUrl} />
+  </div>
+</div>
 
 
       {/* button */}
