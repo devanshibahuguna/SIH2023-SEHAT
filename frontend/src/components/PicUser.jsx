@@ -32,7 +32,7 @@ const PicUser = () => {
   return (
     <div className="App">
     <button className='' onClick={startCamera()}></button>
-    <button className='bg-[#DEF0FF] py-2 px-8 rounded-md my-6' onClick={capturePhoto} disabled={!isStreaming}>
+    <button className='bg-[#DEF0FF] py-2 px-8 rounded-md my-2' onClick={capturePhoto} disabled={!isStreaming}>
       Capture Photo
     </button>
     <div className='flex m-auto'>
