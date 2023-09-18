@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom'
 import OTP from '../components/OTP'
 const Login = () => {
+  const [adhar,setAdhar]=useState('');
+  const handleChange_adhar = event => {
+    setAdhar(event.target.value);
+};
+  const sendAdhar=async(event)=>{
+    event.preventDefault()
+    const final=await fetch('http://localhost:5000/api/adhar',{
+      method:"POST",
+      headers:{
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify(adhar)
+  })
+    if (final.ok){
+      console.log(final)
+    }
+  }
   return (
     <div>
       <Navbar url='/selectCase' />
@@ -26,12 +43,12 @@ const Login = () => {
         <div className='mt-8'>
           <div className='text-[17px]'>Enter your Aadhar number</div>
 
-          <form action='/'>
-            <input type="text" required={true}
+          <form >
+            <input type="text" required={true} onChange={handleChange_adhar}
               className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
               placeholder="xxxx-xxxx-xxxx-xxxx"
             />
-            <button type='submit' className='bg-bluebtn rounded-lg px-8 py-2 my-4 text-white font-[100] '>Proceed</button>
+            <button type='submit' className='bg-bluebtn rounded-lg px-8 py-2 my-4 text-white font-[100] ' onClick={sendAdhar}>Proceed</button>
           </form>
         </div>
 

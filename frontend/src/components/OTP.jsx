@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 function Forgot_password() {
+  const[nextlink,setNextlink]=useState('')
   const [Otp, setotp] = useState(new Array(4).fill(""));
   const handleChange = (element, index) => {
     if (isNaN(element.value)) return false;
@@ -12,7 +13,19 @@ function Forgot_password() {
       element.nextSibling.focus();
     }
   };
-
+  const getOTP=async()=>{
+    const final=await fetch('http://localhost:5000/api/otp',{
+      method:"POST",
+      headers:{
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify(Otp)
+  })
+    if (final.ok){
+      console.log("it worked")
+      setNextlink('/fingerPrint')
+    }
+  }
   //   for timer
   const [counter, setCounter] = React.useState(59);
   React.useEffect(() => {
@@ -45,21 +58,20 @@ function Forgot_password() {
               </div>
             );
           })}
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <Link to={nextlink} onClick={getOTP}>
+              <div className="forgot_btn bg-bluebtn rounded-lg w-[200px] py-2 my-4 text-white font-[100] ">Verify OTP</div>
+            </Link>
+          </div>
+          <div className="timer">
+            <div className="written">Resend OTP in 00 : {counter}</div>
+            <a href="/" className="forgot_resend">
+              Resend OTP ?
+            </a>
+          </div>{" "}
         </div>
-        <div className="flex flex-col justify-center items-center">
-          <Link to='/fingerPrint'>
-            <div className="forgot_btn bg-bluebtn rounded-lg w-[200px] py-2 my-4 text-white font-[100] ">Verify OTP</div>
-          </Link>
-        </div>
-        <div className="timer">
-          <div className="written">Resend OTP in 00 : {counter}</div>
-          <a href="/" className="forgot_resend">
-            Resend OTP ?
-          </a>
-        </div>{" "}
-      </div>
     </div>
   );
 }
-
 export default Forgot_password;
