@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import NoteContext from "./noteContext";
+
 const NoteState=(props)=>{
     const [adhar,setAdhar]=useState('');
     const handleChange_adhar = event => {

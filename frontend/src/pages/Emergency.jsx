@@ -1,15 +1,19 @@
-import React from 'react'
+import React from "react";
 import Navbar from "../components/Navbar";
+// import Map from '../components/Maps';
+import MapComponent from "../components/Maps";
 
 const Emergency = () => {
   return (
     <div>
-    <Navbar url="/selectCase" loginUser="false" title="Hospitals near you" />
+      <Navbar url="/selectCase" loginUser="false" title="Hospitals near you" />
 
-    <div className="w-[100vw]  flex flex-col items-center text-center font-bold bg-bgall h-[calc(100vh-100px)]">
+      <div className="w-[100vw]  flex flex-col items-center text-center font-bold bg-bgall h-[calc(100vh-100px)]">
+        {/* <Map/> */}
+        <MapComponent />
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default Emergency
+export default Emergency;

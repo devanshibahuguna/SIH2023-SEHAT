@@ -78,8 +78,8 @@ function App() {
         <Route path="/emergency" element={<Emergency/>} />
         <Route path="/diabetesAudioRecord" element={<DiabetesAudio/>} />
         <Route path="/diabetesDoctor" element={<DiabetesDoctor/>} />
+        </NoteState>
       </Routes>
-      </NoteState>
     </BrowserRouter>
   );
 }
