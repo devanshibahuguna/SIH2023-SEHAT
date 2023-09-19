@@ -1,14 +1,17 @@
 import React from "react";
 import NoteContext from "./noteContext";
-const NoteState=()=>{
-    const state={
-        "name":"Vaani",
-        "class":"5b"        
-    }
-    return (
-        <NoteContext.provider value={state}>
-            {props.children}
-        </NoteContext.provider>
-    )
-}
+
+const NoteState = (props) => {
+  const state = {
+    name: "Vaani",
+    class: "5b",
+  };
+
+  return (
+    <NoteContext.Provider value={state}> {/* Note the uppercase 'P' in 'Provider' */}
+      {props.children}
+    </NoteContext.Provider>
+  );
+};
+
 export default NoteState;
