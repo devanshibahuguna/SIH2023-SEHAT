@@ -1,14 +1,17 @@
-import React from "react";
+import React,{useState} from "react";
 import NoteContext from "./noteContext";
-const NoteState=()=>{
+const NoteState=(props)=>{
+    const [adhar,setAdhar]=useState('');
+    const handleChange_adhar = event => {
+    setAdhar(event.target.value);
+};
     const state={
-        "name":"Vaani",
-        "class":"5b"        
+        adhar,handleChange_adhar
     }
     return (
-        <NoteContext.provider value={state}>
+        <NoteContext.Provider value={state}>
             {props.children}
-        </NoteContext.provider>
+        </NoteContext.Provider>
     )
 }
 export default NoteState;

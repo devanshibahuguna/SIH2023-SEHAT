@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import heightImg from "../assets/HeightImg.svg";
 const Basichc2 = () => {
+  const [height,setHeight]=useState("")
+  const handleHeight= event => {
+    setHeight(event.target.value);
+};
+  const submitHeight=async()=>{
+    const final=await fetch('http://localhost:5000/api/height',{
+      method:"POST",
+      headers:{
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify(height)
+  })
+    if (final.ok){
+      console.log(final)
+    }
+  }
   return (
     <div>
       <Navbar
@@ -24,6 +40,7 @@ const Basichc2 = () => {
 
           <div className="flex justc  items-center">
             <input
+              onChange={handleHeight}
               type="text"
               className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4"
               placeholder="160"
@@ -33,7 +50,7 @@ const Basichc2 = () => {
 
         {/* button */}
         <Link to="/bhcWeight">
-          <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg ">
+          <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg " onClick={submitHeight}>
             Proceed
           </button>
         </Link>

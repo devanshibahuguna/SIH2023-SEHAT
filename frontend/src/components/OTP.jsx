@@ -27,7 +27,7 @@ function Forgot_password() {
     }
   }
   //   for timer
-  const [counter, setCounter] = React.useState(59);
+  const [counter, setCounter] = React.useState(179);
   React.useEffect(() => {
     const timer =
       counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
@@ -41,10 +41,10 @@ function Forgot_password() {
         <div className="forgot_cont">
           Enter the code sent to your registered Phone number
         </div>
-        <div className="boxes_otp  flex">
+        <div className="boxes_otp ">
           {Otp.map((data, index) => {
             return (
-              <div>
+    
                 <input
                   // className='fle'
                   type="text"
@@ -55,7 +55,7 @@ function Forgot_password() {
                   onChange={(e) => handleChange(e.target, index)}
                   onFocus={(e) => e.target.select()}
                   required />
-              </div>
+          
             );
           })}
           </div>
