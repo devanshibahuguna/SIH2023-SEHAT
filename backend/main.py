@@ -3,6 +3,7 @@ from flask_cors import CORS
 import random
 import pyrebase
 from twilio.rest import Client
+adhar_Number=214857117822
 app=Flask(__name__)
 prev=0
 CORS(app)
@@ -32,6 +33,18 @@ def getFire():
     except Exception as e:
         print ("Error",str(e))
 #Function to get audio data from vite frontend
+@app.route('/api/upload_cataract', methods=['POST'])
+def upload_image():
+    if 'Files' not in request.files:
+        return 'No file part', 400
+
+    files = request.files.getlist('Files')
+
+    # Process or save each file as needed.
+    #for file in files:
+        # Example: file.save('uploads/' + file.filename)
+
+    return 'Images uploaded successfully'
 @app.route("/api/receive", methods=['POST'])
 def form():
     files = request.files['audio']
@@ -56,6 +69,105 @@ def add_data():
     submit_data=request.get_json()
     print(submit_data)
     return 'Done',201
+@app.route('/api/height',methods=['POST'])
+def height_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Height").set(submit_data)
+    return 'Done',201
+@app.route('/api/preg',methods=['POST'])
+def preg_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Pregnancies").set(submit_data)
+    return 'Done',201
+@app.route('/api/bmi',methods=['POST'])
+def bmi_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Bmi").set(submit_data)
+    return 'Done',201
+@app.route('/api/insulin',methods=['POST'])
+def insulin_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Insulin").set(submit_data)
+    return 'Done',201
+@app.route('/api/pedi',methods=['POST'])
+def pedi_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Pedigree").set(submit_data)
+    return 'Done',201
+@app.route('/api/thick',methods=['POST'])
+def thickness_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Thickness").set(submit_data)
+    return 'Done',201
+@app.route('/api/bpl',methods=['POST'])
+def BPL_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Blood Pressure").set(submit_data)
+    return 'Done',201
+@app.route('/api/gluc',methods=['POST'])
+def gluc_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Glucose").set(submit_data)
+    return 'Done',201
+@app.route('/api/selectedButtons',methods=['POST'])
+def selectedButtons_data():
+    submit_data=request.get_json()
+    print(submit_data)
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Symptoms").set(submit_data)
+    return 'Done' , 201
+@app.route('/api/selectedSkin',methods=['POST'])
+def selectedSkin_data():
+    submit_data=request.get_json()
+    print(submit_data)
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Skin Symptoms").set(submit_data)
+    return 'Done' , 201
+@app.route('/api/weight',methods=['POST'])
+def weight_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Weight").set(submit_data)
+    return 'Done',201
+@app.route('/api/bp',methods=['POST'])
+def bp_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Blood Pressure").set(submit_data)
+    return 'Done',201
+@app.route('/api/temp',methods=['POST'])
+def temp_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Temp").set(submit_data)
+    return 'Done',201
+@app.route('/api/beat',methods=['POST'])
+def beat_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Heart Beat").set(submit_data)
+    return 'Done',201
+@app.route('/api/sp',methods=['POST'])
+def sp_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Sp02").set(submit_data)
+    return 'Done',201
+@app.route('/api/option',methods=['POST'])
+def option_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Name").set(submit_data)
+    print("Data sent")
+    return 'Done',201
 @app.route('/api/otp',methods=['POST'])
 def otp_data():
     global prev
@@ -76,6 +188,8 @@ def adhar_data():
     global prev
     submit_data=request.get_json()
     print(submit_data)
+    global adhar_Number
+    adhar_Number=submit_data
     random_8_digit_number = random.randint(1000, 9999)
     try:
         data=db.child('Patients').child(submit_data).child('Number').get()

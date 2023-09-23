@@ -1,9 +1,25 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Diabetes from "../assets/Diabetes7.svg";
 
 const Diabetes7 = () => {
+  const [pedi,setPedi]=useState("")
+  const handlePedi=(event)=>{
+    setPedi(event.target.value)
+  }
+  const sendPedi=async()=>{
+    const final=await fetch('http://localhost:5000/api/pedi',{
+      method:"POST",
+      headers:{
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify(pedi)
+  })
+    if (final.ok){
+      console.log(final)
+    }
+  }
   return (
     <div>
     <Navbar url="/Diabetes6" loginUser="true" title="Diabetes Checkup" />
@@ -22,6 +38,7 @@ const Diabetes7 = () => {
 
         <div className="flex justc  items-center">
           <input
+          onChange={handlePedi}
             type="text"
             className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4"
           />
@@ -30,7 +47,7 @@ const Diabetes7 = () => {
 
       {/* button */}
       <Link to="/diabetesAudioRecord">
-        <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg ">
+        <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg "onClick={sendPedi}>
           Proceed
         </button>
       </Link>

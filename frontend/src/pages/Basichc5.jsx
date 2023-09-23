@@ -1,8 +1,28 @@
-import React from "react";
+import React,{useState,useContext} from "react";
 import { Link } from "react-router-dom";
+import CryptoJS from 'crypto-js';
 import Navbar from "../components/Navbar";
 import HeartBeatImg from "../assets/HeartbeatImg.svg";
+//import cryptoRandomString from 'crypto-random-string';
 const Basichc5 = () => {
+ // const secretKey=cryptoRandomString({length:64,type:'hex'});
+  const [beat,setBeat]=useState("")
+  const handleBeat= event => {
+    setBeat(event.target.value);
+};
+const submitBeat=async()=>{
+  //const encryptedValue=CryptoJS.AES.encrypt(beat,secretKey).toString();
+  const final=await fetch('http://localhost:5000/api/beat',{
+    method:"POST",
+    headers:{
+    'Content-Type':'application/json'
+  },
+  body: JSON.stringify(beat)
+})
+  if (final.ok){
+    console.log(final)
+  }
+}
   return (
     <div>
       <Navbar url="/bhcTemp" loginUser="true" title="General Checkup" />
@@ -20,6 +40,7 @@ const Basichc5 = () => {
 
           <div className="flex justc  items-center">
             <input
+            onChange={handleBeat}
               type="text"
               className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4"
               placeholder="80"
@@ -29,7 +50,7 @@ const Basichc5 = () => {
 
         {/* button */}
         <Link to="/bhcSPO2">
-          <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg ">
+          <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg " onClick={submitBeat}>
             Proceed
           </button>
         </Link>

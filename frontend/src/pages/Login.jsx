@@ -1,12 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState ,useContext} from 'react'
 import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom'
 import OTP from '../components/OTP'
+import noteContext from '../context/notes/noteContext'
 const Login = () => {
-  const [adhar,setAdhar]=useState('');
-  const handleChange_adhar = event => {
-    setAdhar(event.target.value);
-};
+  const {adhar , handleChange_adhar}=useContext(noteContext);
   const sendAdhar=async(event)=>{
     event.preventDefault()
     const final=await fetch('http://localhost:5000/api/adhar',{

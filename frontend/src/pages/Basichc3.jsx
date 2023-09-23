@@ -1,9 +1,28 @@
-import React from "react";
+import React,{useState,useContext} from "react";
 import { Link } from "react-router-dom";
+import CryptoJS from 'crypto-js';
 import Navbar from "../components/Navbar";
 import weightImg from "../assets/WeightImg.svg";
-
+//import cryptoRandomString from 'crypto-random-string';
 const Basichc3 = () => {
+  //const secretKey=cryptoRandomString({length:64,type:'hex'});
+  const [weight,setWeight]=useState("")
+  const handleWeight= event => {
+    setWeight(event.target.value);
+};
+const submitWeight=async()=>{
+  //const encryptedValue=CryptoJS.AES.encrypt(weight,secretKey).toString();
+  const final=await fetch('http://localhost:5000/api/weight',{
+    method:"POST",
+    headers:{
+    'Content-Type':'application/json'
+  },
+  body: JSON.stringify(weight)
+})
+  if (final.ok){
+    console.log(final)
+  }
+}
   return (
     <div>
       <Navbar url="/bhcHeight" loginUser="true" title="General Checkup" />
@@ -21,6 +40,7 @@ const Basichc3 = () => {
 
           <div className="flex justc  items-center">
             <input
+            onChange={handleWeight}
               type="text"
               className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4"
               placeholder="60"
@@ -30,7 +50,7 @@ const Basichc3 = () => {
 
         {/* button */}
         <Link to="/bhcTemp">
-          <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg ">
+          <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg " onClick={submitWeight}>
             Proceed
           </button>
         </Link>

@@ -1,15 +1,15 @@
-import React from 'react'
+import React ,{useContext}from 'react'
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import PicUser from '../components/PicUser';
 import DragDropFiles from '../components/DragDropFilesSkin';
 import QRCode from 'qrcode.react';
-
+import noteContext from '../context/notes/noteContext'
 const Sh1 = () => {
-
+  const {adhar , handleChange_adhar}=useContext(noteContext);
+  const for_now=12
   // Replace 'https://yourwebsite.com' with your actual website URL.
-  const websiteUrl = 'https://yourwebsite.com';
-
+  const websiteUrl = `https://deluxe-marzipan-e0ed18.netlify.app?aadhar=${for_now}&area=skin`
 
   return (
     <div>

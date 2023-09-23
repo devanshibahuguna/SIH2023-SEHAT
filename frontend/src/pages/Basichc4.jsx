@@ -1,8 +1,28 @@
-import React from "react";
+import React,{useState,useContext} from "react";
 import { Link } from "react-router-dom";
+import CryptoJS from 'crypto-js';
 import Navbar from "../components/Navbar";
 import tempImg from "../assets/BodyTempImg.svg";
+// import cryptoRandomString from 'crypto-random-string';
 const Basichc4 = () => {
+  //const secretKey=cryptoRandomString({length:64,type:'hex'});
+  const [temp,setTemp]=useState("")
+  const handleTemp= event => {
+    setTemp(event.target.value);
+};
+const submitTemp=async()=>{
+  //const encryptedValue=CryptoJS.AES.encrypt(temp,secretKey).toString();
+  const final=await fetch('http://localhost:5000/api/temp',{
+    method:"POST",
+    headers:{
+    'Content-Type':'application/json'
+  },
+  body: JSON.stringify(temp)
+})
+  if (final.ok){
+    console.log(final)
+  }
+}
   return (
     <div>
       <Navbar url="/bhcWeight" loginUser="true" title="General Checkup" />
@@ -22,6 +42,7 @@ const Basichc4 = () => {
 
           <div className="flex justc  items-center">
             <input
+            onChange={handleTemp}
               type="text"
               className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4"
               placeholder="97"
@@ -31,7 +52,7 @@ const Basichc4 = () => {
 
         {/* button */}
         <Link to="/bhcHeartbeat">
-          <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg ">
+          <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg " onClick={submitTemp}>
             Proceed
           </button>
         </Link>

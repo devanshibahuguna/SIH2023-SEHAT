@@ -1,9 +1,25 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Diabetes from "../assets/Diabetes6.svg";
 
 const Diabetes6 = () => {
+  const [thickness,setThickness]=useState("")
+  const handleThick=(event)=>{
+    setThickness(event.target.value)
+  }
+  const sendThick=async()=>{
+    const final=await fetch('http://localhost:5000/api/thick',{
+      method:"POST",
+      headers:{
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify(thickness)
+  })
+    if (final.ok){
+      console.log(final)
+    }
+  }
   return (
     <div>
     <Navbar url="/Diabetes5" loginUser="true" title="Diabetes Checkup" />
@@ -22,6 +38,7 @@ const Diabetes6 = () => {
 
         <div className="flex justc  items-center">
           <input
+          onChange={handleThick}
             type="text"
             className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4"
           />
@@ -30,7 +47,7 @@ const Diabetes6 = () => {
 
       {/* button */}
       <Link to="/Diabetes7">
-        <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg ">
+        <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg "onClick={sendThick}>
           Proceed
         </button>
       </Link>

@@ -21,7 +21,7 @@ const Navbar = (props) => {
         </div>}
 
         <div className='text-white text-2xl font-bold mr-14 flex items-center justify-center'>
-          <div className=' w-[32px] h-[32px] top-[24px] left-[1256px] mr-4 '><GoHome /></div>
+          <Link to="/concern1"><div className=' w-[32px] h-[32px] top-[24px] left-[1256px] mr-4 '><GoHome /></div></Link>
           <div className=' w-[32px] h-[32px] top-[24px] left-[1256px] mr-4'><LuRefreshCcw /></div>
           <div>
             {props.loginUser && <button className='flex justify-center items-center border-2 rounded-lg bg-white text-black px-2 '>

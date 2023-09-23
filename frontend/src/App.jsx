@@ -39,7 +39,7 @@ import NoteState from "./context/notes/NoteState";
 function App() {
   return (
     <BrowserRouter>
-        <NoteState>
+    <NoteState>
       <Routes>
         <Route path="/" element={<FrontPage />} />
         <Route path="/selectCase" element={<SelectCase />} />
@@ -79,7 +79,7 @@ function App() {
         <Route path="/diabetesAudioRecord" element={<DiabetesAudio/>} />
         <Route path="/diabetesDoctor" element={<DiabetesDoctor/>} />
       </Routes>
-        </NoteState>
+      </NoteState>
     </BrowserRouter>
   );
 }

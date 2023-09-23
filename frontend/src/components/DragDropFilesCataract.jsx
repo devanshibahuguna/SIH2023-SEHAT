@@ -10,20 +10,32 @@ const DragDropFilesCataract = () => {
 
   const handleDrop = (event) => {
     event.preventDefault();
-    setFiles(event.dataTransfer.files)
+    const fileList = Array.from(event.dataTransfer.files);
+    setFiles(fileList);
   };
   
   // send files to the server // learn from my other video
-  const handleUpload = () => {
+  const handleUpload = async() => {
+    console.log(files)
     const formData = new FormData();
     formData.append("Files", files);
-    console.log(formData.getAll())
-    // fetch(
-    //   "link", {
-    //     method: "POST",
-    //     body: formData
-    //   }  
-    // )
+    for (let i = 0; i < files.length; i++) {
+      formData.append("Files", files[i]);
+    }
+    try {
+      const response = await fetch('/api/upload_cataract', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        console.log('Image uploaded successfully');
+      } else {
+        console.error('Failed to upload image');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   if (files) return (
@@ -47,14 +59,13 @@ const DragDropFilesCataract = () => {
         >
           <h1>Drag and Drop Files to Upload</h1>
           <h1>Or</h1>
-          <input 
-            type="file"
-            multiple
-            onChange={(event) => setFiles(event.target.files)}
-            hidden
-            accept="image/png, image/jpeg"
-            ref={inputRef}
-          />
+          <input
+  type="file"
+  multiple
+  onChange={(event) => setFiles(Array.from(event.target.files))}
+  accept="image/png, image/jpeg"
+  ref={inputRef}
+/>
           <button onClick={() => inputRef.current.click()}>Select Files</button>
         </div>
     </>

@@ -1,9 +1,25 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Diabetes from "../assets/Diabetes4.svg";
 
 const Diabetes4 = () => {
+  const [insulin,setInsulin]=useState("")
+  const handleInsulin=(event)=>{
+    setInsulin(event.target.value)
+  }
+  const sendInsulin=async()=>{
+    const final=await fetch('http://localhost:5000/api/insulin',{
+      method:"POST",
+      headers:{
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify(insulin)
+  })
+    if (final.ok){
+      console.log(final)
+    }
+  }
   return (
     <div>
     <Navbar url="/Diabetes3" loginUser="true" title="Diabetes Checkup" />
@@ -22,6 +38,7 @@ const Diabetes4 = () => {
 
         <div className="flex justc  items-center">
           <input
+          onChange={handleInsulin}
             type="text"
             className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4"
           />
@@ -30,7 +47,7 @@ const Diabetes4 = () => {
 
       {/* button */}
       <Link to="/Diabetes5">
-        <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg ">
+        <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg " onClick={sendInsulin}>
           Proceed
         </button>
       </Link>

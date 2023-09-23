@@ -17,7 +17,7 @@ const PicUser = () => {
       }
     };
   
-    const capturePhoto = () => {
+    const capturePhoto = (event) => {
       if (isStreaming) {
         const video = videoRef.current;
         const canvas = canvasRef.current;
@@ -28,7 +28,8 @@ const PicUser = () => {
         setPhoto(canvas.toDataURL('image/png'));
       }
     };
-
+    
+    
   return (
     <div className="App">
     <button className='' onClick={startCamera()}></button>
@@ -44,7 +45,7 @@ const PicUser = () => {
       style={{ display: isStreaming ? 'block' : 'none' }}
     />
     <canvas  ref={canvasRef} style={{ display: 'none' }} />
-    {photo && <img className='ml-10 rounded-lg' src={photo} alt="Captured Photo" />}
+    {photo &&<img className='ml-10 rounded-lg' src={photo} alt="Captured Photo" />}
     </div>
   </div>
   )
