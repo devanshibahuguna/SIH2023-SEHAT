@@ -1,9 +1,25 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Diabetes from "../assets/Diabetes3.svg";
 
 const Diabetes3 = () => {
+  const [bpLevel,setBPLevel]=useState("")
+  const handlebpLevel=(event)=>{
+    setBPLevel(event.target.value)
+  }
+  const sendBPL=async()=>{
+    const final=await fetch('http://localhost:5000/api/bpl',{
+      method:"POST",
+      headers:{
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify(bpLevel)
+  })
+    if (final.ok){
+      console.log(final)
+    }
+  }
   return (
     <div>
     <Navbar url="/Diabetes2" loginUser="true" title="Diabetes Checkup" />
@@ -22,6 +38,7 @@ const Diabetes3 = () => {
 
         <div className="flex justc  items-center">
           <input
+          onChange={handlebpLevel}
             type="text"
             className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4"
           />
@@ -30,7 +47,7 @@ const Diabetes3 = () => {
 
       {/* button */}
       <Link to="/Diabetes4">
-        <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg ">
+        <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg "onClick={sendBPL}>
           Proceed
         </button>
       </Link>

@@ -1,13 +1,17 @@
-import React,{useState} from "react";
+import React,{useState,useContext} from "react";
 import { Link } from "react-router-dom";
+import CryptoJS from 'crypto-js';
 import Navbar from "../components/Navbar";
 import tempImg from "../assets/BodyTempImg.svg";
+// import cryptoRandomString from 'crypto-random-string';
 const Basichc4 = () => {
+  //const secretKey=cryptoRandomString({length:64,type:'hex'});
   const [temp,setTemp]=useState("")
   const handleTemp= event => {
     setTemp(event.target.value);
 };
 const submitTemp=async()=>{
+  //const encryptedValue=CryptoJS.AES.encrypt(temp,secretKey).toString();
   const final=await fetch('http://localhost:5000/api/temp',{
     method:"POST",
     headers:{

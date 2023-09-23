@@ -1,14 +1,17 @@
-import React,{useState} from "react";
+import React,{useState,useContext} from "react";
 import { Link } from "react-router-dom";
+import CryptoJS from 'crypto-js';
 import Navbar from "../components/Navbar";
 import weightImg from "../assets/WeightImg.svg";
-
+//import cryptoRandomString from 'crypto-random-string';
 const Basichc3 = () => {
+  //const secretKey=cryptoRandomString({length:64,type:'hex'});
   const [weight,setWeight]=useState("")
   const handleWeight= event => {
     setWeight(event.target.value);
 };
 const submitWeight=async()=>{
+  //const encryptedValue=CryptoJS.AES.encrypt(weight,secretKey).toString();
   const final=await fetch('http://localhost:5000/api/weight',{
     method:"POST",
     headers:{

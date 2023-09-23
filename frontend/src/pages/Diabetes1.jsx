@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Diabetes from "../assets/Diabetes1.svg";
 const Diabetes1 = () => {
+  const [pregnancies,setPreg]=useState("")
+  const handlePreg=(event)=>{
+    setPreg(event.target.value)
+  }
+  const sendPreg=async()=>{
+    const final=await fetch('http://localhost:5000/api/preg',{
+      method:"POST",
+      headers:{
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify(pregnancies)
+  })
+    if (final.ok){
+      console.log(final)
+    }
+  }
   return (
     <div>
     <Navbar url="/concern1" loginUser="true" title="Diabetes Checkup" />
@@ -21,6 +37,7 @@ const Diabetes1 = () => {
 
         <div className="flex justc  items-center">
           <input
+          onChange={handlePreg}
             type="text"
             className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4"
           />
@@ -29,7 +46,7 @@ const Diabetes1 = () => {
 
       {/* button */}
       <Link to="/Diabetes2">
-        <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg ">
+        <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg " onClick={sendPreg}>
           Proceed
         </button>
       </Link>

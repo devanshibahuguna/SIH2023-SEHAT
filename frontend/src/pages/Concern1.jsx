@@ -4,10 +4,14 @@ import ConsultDoctor from '../assets/ConsultDoctor.svg';
 import general from '../assets/General.svg';
 import diabetes from '../assets/Diabetes.svg';
 import heart from '../assets/Heart.svg';
+import CryptoJS from 'crypto-js';
 import cataract from '../assets/Cataract.svg';
 import { Link } from 'react-router-dom';
+//import cryptoRandomString from 'crypto-random-string';
 const Concern1 = () => {
+  //const secretKey=cryptoRandomString({length:64,type:'hex'});
   const handleGeneral=async()=>{
+    //const encryptedValue=CryptoJS.AES.encrypt("General Health Checkup",secretKey).toString();
     const final=await fetch('http://localhost:5000/api/option',{
       method:"POST",
       headers:{
@@ -20,6 +24,7 @@ const Concern1 = () => {
     }
   }
   const handleDiabetes=async()=>{
+    //const encryptedValue=CryptoJS.AES.encrypt("Diabetes",secretKey).toString();
     const final=await fetch('http://localhost:5000/api/option',{
       method:"POST",
       headers:{
@@ -32,6 +37,7 @@ const Concern1 = () => {
     }
   }
   const handleSkin=async()=>{
+    //const encryptedValue=CryptoJS.AES.encrypt("Skin",secretKey).toString();
     const final=await fetch('http://localhost:5000/api/option',{
       method:"POST",
       headers:{
@@ -45,6 +51,7 @@ const Concern1 = () => {
 
   }
   const handleHeart=async()=>{
+    //const encryptedValue=CryptoJS.AES.encrypt("Heart",secretKey).toString();
     const final=await fetch('http://localhost:5000/api/option',{
       method:"POST",
       headers:{
@@ -57,6 +64,7 @@ const Concern1 = () => {
     }
   }
   const handleCataract=async()=>{
+    //const encryptedValue=CryptoJS.AES.encrypt("Cataract",secretKey).toString();
     const final=await fetch('http://localhost:5000/api/option',{
       method:"POST",
       headers:{

@@ -1,13 +1,17 @@
-import React,{useState} from "react";
+import React,{useState,useContext} from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import CryptoJS from 'crypto-js';
 import BPImg from "../assets/BPImg.svg";
+//import cryptoRandomString from 'crypto-random-string';
 const Basichc7 = () => {
+  //const secretKey=cryptoRandomString({length:64,type:'hex'});
   const [bp,setBp]=useState("")
   const handleBp= event => {
     setBp(event.target.value);
 };
 const submitBp=async()=>{
+  //const encryptedValue=CryptoJS.AES.encrypt(bp,secretKey).toString();
   const final=await fetch('http://localhost:5000/api/bp',{
     method:"POST",
     headers:{

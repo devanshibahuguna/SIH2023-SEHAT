@@ -1,8 +1,24 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Diabetes from "../assets/Diabetes2.svg";
 const Diabetes2 = () => {
+  const [glucose,setGlucose]=useState("")
+  const handleGluc=(event)=>{
+    setGlucose(event.target.value)
+  }
+  const sendGluc=async()=>{
+    const final=await fetch('http://localhost:5000/api/gluc',{
+      method:"POST",
+      headers:{
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify(glucose)
+  })
+    if (final.ok){
+      console.log(final)
+    }
+  }
   return (
     <div>
     <Navbar url="/Diabetes1" loginUser="true" title="Diabetes Checkup" />
@@ -21,6 +37,7 @@ const Diabetes2 = () => {
 
         <div className="flex justc  items-center">
           <input
+          onChange={handleGluc}
             type="text"
             className="flex justify-center text-center px-8 py-1 rounded-lg bg-bginput my-4"
           />
@@ -29,7 +46,7 @@ const Diabetes2 = () => {
 
       {/* button */}
       <Link to="/Diabetes3">
-        <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg ">
+        <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg "onClick={sendGluc}>
           Proceed
         </button>
       </Link>

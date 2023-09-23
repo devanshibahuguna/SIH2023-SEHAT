@@ -1,13 +1,19 @@
 import React, { useState } from "react";
+import CryptoJS from 'crypto-js';
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import heightImg from "../assets/HeightImg.svg";
+// import cryptoRandomString from 'crypto-random-string';
 const Basichc2 = () => {
+  //const secretKey=cryptoRandomString({length:64,type:'hex'});
+  // const decryptedBytes=CryptoJS.AES.decrypt(encryptedValue,secretKey);
+  // const decryptedValue=decryptedBytes.toString(CryptoJS.enc.Utf8);
   const [height,setHeight]=useState("")
   const handleHeight= event => {
     setHeight(event.target.value);
 };
   const submitHeight=async()=>{
+    //const encryptedValue=CryptoJS.AES.encrypt(height,secretKey).toString();
     const final=await fetch('http://localhost:5000/api/height',{
       method:"POST",
       headers:{

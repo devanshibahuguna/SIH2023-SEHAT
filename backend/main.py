@@ -75,6 +75,62 @@ def height_data():
     global adhar_Number
     db.child("Patients").child(adhar_Number).child("Checkup").child("Height").set(submit_data)
     return 'Done',201
+@app.route('/api/preg',methods=['POST'])
+def preg_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Pregnancies").set(submit_data)
+    return 'Done',201
+@app.route('/api/bmi',methods=['POST'])
+def bmi_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Bmi").set(submit_data)
+    return 'Done',201
+@app.route('/api/insulin',methods=['POST'])
+def insulin_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Insulin").set(submit_data)
+    return 'Done',201
+@app.route('/api/pedi',methods=['POST'])
+def pedi_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Pedigree").set(submit_data)
+    return 'Done',201
+@app.route('/api/thick',methods=['POST'])
+def thickness_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Thickness").set(submit_data)
+    return 'Done',201
+@app.route('/api/bpl',methods=['POST'])
+def BPL_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Blood Pressure").set(submit_data)
+    return 'Done',201
+@app.route('/api/gluc',methods=['POST'])
+def gluc_data():
+    submit_data=request.get_json()
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Glucose").set(submit_data)
+    return 'Done',201
+@app.route('/api/selectedButtons',methods=['POST'])
+def selectedButtons_data():
+    submit_data=request.get_json()
+    print(submit_data)
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Symptoms").set(submit_data)
+    return 'Done' , 201
+@app.route('/api/selectedSkin',methods=['POST'])
+def selectedSkin_data():
+    submit_data=request.get_json()
+    print(submit_data)
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Skin Symptoms").set(submit_data)
+    return 'Done' , 201
 @app.route('/api/weight',methods=['POST'])
 def weight_data():
     submit_data=request.get_json()

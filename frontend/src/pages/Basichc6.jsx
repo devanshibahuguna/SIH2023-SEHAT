@@ -1,13 +1,17 @@
-import React,{useState} from "react";
+import React,{useState,useContext} from "react";
 import { Link } from "react-router-dom";
+import CryptoJS from 'crypto-js';
 import Navbar from "../components/Navbar";
 import SPO2Img from "../assets/SPO2Img.svg";
+//import cryptoRandomString from 'crypto-random-string';
 const Basichc6 = () => {
+  //const secretKey=cryptoRandomString({length:64,type:'hex'});
   const [sp,setSp]=useState("")
   const handleSp= event => {
     setSp(event.target.value);
 };
 const submitSp=async()=>{
+  //const encryptedValue=CryptoJS.AES.encrypt(sp,secretKey).toString();
   const final=await fetch('http://localhost:5000/api/sp',{
     method:"POST",
     headers:{
