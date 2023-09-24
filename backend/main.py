@@ -1,6 +1,7 @@
 from flask import Flask,jsonify,request
 from flask_cors import CORS
 import random
+import pickle
 import pyrebase
 from twilio.rest import Client
 adhar_Number=214857117822
@@ -297,7 +298,21 @@ def heartInput_data():
     arr=["age","sex","restingbp","serum","agina","maxHR","fastingBS","depression","Electrocardiographic","slope","vColour","thal"]
     for i in arr:
         db.child("Patients").child(adhar_Number).child("Checkup").child("Heart").child(i).set(submit_data[i])
+    heart_disease_model = pickle.load(open('Heart_disease_model.sav','rb'))
+    heart_diagnosis = ''
+    gender=0 if submit_data["sex"]=="female" else 1
+    exang=0 if submit_data["agina"]=="no" else 1
+    fbs=0 if submit_data["fastingBS"]=="false" else 1
+    #here chest pain types is missing value , need to find it and make its frontend too
+    heart_prediction = heart_disease_model.predict([[int(submit_data["age"]),gender,3, int(submit_data["restingbp"]),int(submit_data["serum"]),fbs,int(submit_data["Electrocardiographic"]),int(submit_data["maxHR"]),exang,float(submit_data["depression"]),int(submit_data["slope"]),int(submit_data["vColour"]),int(submit_data["thal"])]])                          
+        
+    if (heart_prediction[0] == 1):
+        heart_diagnosis = 'The person is having heart disease'
+    else:
+        heart_diagnosis = 'The person does not have any heart disease'
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Heart").child("Heart Machine Learning Prediction").set(heart_diagnosis)
     return 'Done',201
+
 @app.route('/api/sp',methods=['POST'])
 def sp_data():
     submit_data=request.get_json()
@@ -351,3 +366,20 @@ def adhar_data():
     return 'Done',201
 if __name__=='__main__':
     app.run(host='0.0.0.0',debug=True)
+
+
+
+# Machine learning data inputs sample :
+# age = 63
+# sex = 1
+# cp = 3
+# trestbps = 145 
+# chol = 233
+# fbs = 1
+# restecg = 0
+# thalach = 150
+# exang = 0
+# oldpeak = 2.3
+# slope = 0
+# ca = 0
+# thal = 1
