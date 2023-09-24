@@ -52,7 +52,7 @@ def formBody():
     try:
         storage.child(str(adhar_Number)).child("Body").child("file1.wav").put(files)
         file_url = storage.child(str(adhar_Number)+"/Body/file1.wav").get_url(None)
-        db.child("Patients").child(adhar_Number).child("Checkup").child("Body Audio").child("file1").child("url").set(file_url)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("General").child("Body Audio").child("file1").child("url").set(file_url)
         return jsonify({'message': 'File uploaded successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -65,7 +65,7 @@ def form2Body():
     try:
         storage.child(str(adhar_Number)).child("Body").child("file2.wav").put(files)
         file_url = storage.child(str(adhar_Number)+"/Body/file2.wav").get_url(None)
-        db.child("Patients").child(adhar_Number).child("Checkup").child("Body Audio").child("file2").child("url").set(file_url)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("General").child("Body Audio").child("file2").child("url").set(file_url)
         return jsonify({'message': 'File uploaded successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -76,7 +76,7 @@ def form3Body():
     try:
         storage.child(str(adhar_Number)).child("Body").child("file3.wav").put(files)
         file_url = storage.child(str(adhar_Number)+"/Body/file3.wav").get_url(None)
-        db.child("Patients").child(adhar_Number).child("Checkup").child("Body Audio").child("file3").child("url").set(file_url)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("General").child("Body Audio").child("file3").child("url").set(file_url)
         return jsonify({'message': 'File uploaded successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -87,7 +87,7 @@ def form4Body():
     try:
         storage.child(str(adhar_Number)).child("Body").child("file4.wav").put(files)
         file_url = storage.child(str(adhar_Number)+"/Body/file4.wav").get_url(None)
-        db.child("Patients").child(adhar_Number).child("Checkup").child("Body Audio").child("file4").child("url").set(file_url)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("General").child("Body Audio").child("file4").child("url").set(file_url)
         return jsonify({'message': 'File uploaded successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -99,7 +99,7 @@ def formDiabetes():
     try:
         storage.child(str(adhar_Number)).child("Diabetes").child("file1.wav").put(files)
         file_url = storage.child(str(adhar_Number)+"/Diabetes/file1.wav").get_url(None)
-        db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes Audio").child("file1").child("url").set(file_url)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes").child("Diabetes Audio").child("file1").child("url").set(file_url)
         return jsonify({'message': 'File uploaded successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -110,7 +110,7 @@ def formDiabetes2():
     try:
         storage.child(str(adhar_Number)).child("Diabetes").child("file2.wav").put(files)
         file_url = storage.child(str(adhar_Number)+"/Diabetes/file2.wav").get_url(None)
-        db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes Audio").child("file2").child("url").set(file_url)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes").child("Diabetes Audio").child("file2").child("url").set(file_url)
         return jsonify({'message': 'File uploaded successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -121,7 +121,7 @@ def formDiabetes3():
     try:
         storage.child(str(adhar_Number)).child("Diabetes").child("file3.wav").put(files)
         file_url = storage.child(str(adhar_Number)+"/Diabetes/file3.wav").get_url(None)
-        db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes Audio").child("file3").child("url").set(file_url)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes").child("Diabetes Audio").child("file3").child("url").set(file_url)
         return jsonify({'message': 'File uploaded successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -132,7 +132,7 @@ def formDiabetes4():
     try:
         storage.child(str(adhar_Number)).child("Diabetes").child("file4.wav").put(files)
         file_url = storage.child(str(adhar_Number)+"/Diabetes/file4.wav").get_url(None)
-        db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes Audio").child("file4").child("url").set(file_url)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes").child("Diabetes Audio").child("file4").child("url").set(file_url)
         return jsonify({'message': 'File uploaded successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -144,7 +144,7 @@ def formSkin():
     try:
         storage.child(str(adhar_Number)).child("Skin").child("file1.wav").put(files)
         file_url = storage.child(str(adhar_Number)+"/Skin/file1.wav").get_url(None)
-        db.child("Patients").child(adhar_Number).child("Checkup").child("Skin Audio").child("file1").child("url").set(file_url)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Skin").child("Skin Audio").child("file1").child("url").set(file_url)
         return jsonify({'message': 'File uploaded successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -155,7 +155,7 @@ def formSkin2():
     try:
         storage.child(str(adhar_Number)).child("Skin").child("file2.wav").put(files)
         file_url = storage.child(str(adhar_Number)+"/Skin/file2.wav").get_url(None)
-        db.child("Patients").child(adhar_Number).child("Checkup").child("Skin Audio").child("file2").child("url").set(file_url)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Skin").child("Skin Audio").child("file2").child("url").set(file_url)
         return jsonify({'message': 'File uploaded successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -166,7 +166,7 @@ def formSkin3():
     try:
         storage.child(str(adhar_Number)).child("Skin").child("file3.wav").put(files)
         file_url = storage.child(str(adhar_Number)+"/Skin/file3.wav").get_url(None)
-        db.child("Patients").child(adhar_Number).child("Checkup").child("Skin Audio").child("file3").child("url").set(file_url)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Skin").child("Skin Audio").child("file3").child("url").set(file_url)
         return jsonify({'message': 'File uploaded successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -177,7 +177,7 @@ def formSkin4():
     try:
         storage.child(str(adhar_Number)).child("Skin").child("file4.wav").put(files)
         file_url = storage.child(str(adhar_Number)+"/Skin/file4.wav").get_url(None)
-        db.child("Patients").child(adhar_Number).child("Checkup").child("Skin Audio").child("file4").child("url").set(file_url)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Skin").child("Skin Audio").child("file4").child("url").set(file_url)
         return jsonify({'message': 'File uploaded successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -201,100 +201,108 @@ def add_data():
 def height_data():
     submit_data=request.get_json()
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Height").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("General").child("Height").set(submit_data)
     return 'Done',201
 @app.route('/api/preg',methods=['POST'])
 def preg_data():
     submit_data=request.get_json()
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Pregnancies").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes").child("Pregnancies").set(submit_data)
     return 'Done',201
 @app.route('/api/bmi',methods=['POST'])
 def bmi_data():
     submit_data=request.get_json()
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Bmi").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes").child("Bmi").set(submit_data)
     return 'Done',201
 @app.route('/api/insulin',methods=['POST'])
 def insulin_data():
     submit_data=request.get_json()
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Insulin").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes").child("Insulin").set(submit_data)
     return 'Done',201
 @app.route('/api/pedi',methods=['POST'])
 def pedi_data():
     submit_data=request.get_json()
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Pedigree").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes").child("Pedigree").set(submit_data)
     return 'Done',201
 @app.route('/api/thick',methods=['POST'])
 def thickness_data():
     submit_data=request.get_json()
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Thickness").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes").child("Skin Thickness").set(submit_data)
     return 'Done',201
 @app.route('/api/bpl',methods=['POST'])
 def BPL_data():
     submit_data=request.get_json()
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Blood Pressure").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes").child("Blood Pressure").set(submit_data)
     return 'Done',201
 @app.route('/api/gluc',methods=['POST'])
 def gluc_data():
     submit_data=request.get_json()
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Glucose").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes").child("Glucose").set(submit_data)
     return 'Done',201
 @app.route('/api/selectedButtons',methods=['POST'])
 def selectedButtons_data():
     submit_data=request.get_json()
     print(submit_data)
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Body Symptoms").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("General").child("Body Symptoms").set(submit_data)
     return 'Done' , 201
 @app.route('/api/heartConcern',methods=['POST'])
 def heartConcern_data():
     submit_data=request.get_json()
     print(submit_data)
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Heart Concern").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Heart").child("Heart Concern").set(submit_data)
     return 'Done' , 201
 @app.route('/api/selectedSkin',methods=['POST'])
 def selectedSkin_data():
     submit_data=request.get_json()
     print(submit_data)
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Skin Symptoms").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Skin").child("Skin Symptoms").set(submit_data)
     return 'Done' , 201
 @app.route('/api/weight',methods=['POST'])
 def weight_data():
     submit_data=request.get_json()
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Weight").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("General").child("Weight").set(submit_data)
     return 'Done',201
 @app.route('/api/bp',methods=['POST'])
 def bp_data():
     submit_data=request.get_json()
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Blood Pressure").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("General").child("Blood Pressure").set(submit_data)
     return 'Done',201
 @app.route('/api/temp',methods=['POST'])
 def temp_data():
     submit_data=request.get_json()
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Temp").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("General").child("Temp").set(submit_data)
     return 'Done',201
 @app.route('/api/beat',methods=['POST'])
 def beat_data():
     submit_data=request.get_json()
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Heart Beat").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("General").child("Heart Beat").set(submit_data)
+    return 'Done',201
+@app.route('/api/heartInputData',methods=['POST'])
+def heartInput_data():
+    global adhar_Number
+    submit_data=request.get_json()
+    arr=["age","sex","restingbp","serum","agina","maxHR","fastingBS","depression","Electrocardiographic","slope","vColour","thal"]
+    for i in arr:
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Heart").child(i).set(submit_data[i])
     return 'Done',201
 @app.route('/api/sp',methods=['POST'])
 def sp_data():
     submit_data=request.get_json()
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Sp02").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("General").child("Sp02").set(submit_data)
     return 'Done',201
 @app.route('/api/option',methods=['POST'])
 def option_data():
