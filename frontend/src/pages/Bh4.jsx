@@ -1,5 +1,5 @@
 import React from 'react'
-import connectDoctor from '../assets/ConnectDoctor.svg';
+import connectDoctor from '../assets/eSanjeevaniConnectDoctor.svg';
 import {Link} from 'react-router-dom';
 const Bh4 = () => {
   return (
@@ -21,16 +21,16 @@ const Bh4 = () => {
 
         {/* picture  */}
         <div className='flex flex-col justify-center items-center '>
-        <img className='w-[567px] h-[546.62px] top-[142px] left-[362px]' src={connectDoctor}  />
+        <img className='w-[467px] h-[446.62px] top-[142px] left-[362px]' src={connectDoctor}  />
         </div>
 
         {/* text */}
-        <div>
+        {/* <div>
 
             <div className='w-[669px] h-[25px] top-[686px] left-[386px] font-[600] text-[22px] leading-[25px]  text-center mb-[30px]'>
             You are being connected to a doctor
             </div>
-        </div>
+        </div> */}
 
         {/* description */}
         <div>

@@ -36,6 +36,7 @@ import Emergency from "./pages/Emergency";
 import DiabetesDoctor from "./pages/DiabetesDoctor";
 import DiabetesAudio from "./pages/DiabetesAudio";
 import NoteState from "./context/notes/NoteState";
+import Ques2 from "./pages/QuestionsBody/Ques2";
 function App() {
   return (
     <BrowserRouter>
@@ -74,10 +75,10 @@ function App() {
         <Route path="/heartInputs" element={<HeartInputs/>} />
         <Route path="/cataractImage" element={<CataractImage/>} />
         <Route path="/cataractDoctor" element={<CataractDoctor/>} />
-        <Route path="/cataractDoctor" element={<CataractDoctor/>} />
         <Route path="/emergency" element={<Emergency/>} />
         <Route path="/diabetesAudioRecord" element={<DiabetesAudio/>} />
         <Route path="/diabetesDoctor" element={<DiabetesDoctor/>} />
+        <Route path="/bodyques2" element={<Ques2/>} />
       </Routes>
       </NoteState>
     </BrowserRouter>

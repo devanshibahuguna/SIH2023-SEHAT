@@ -1,82 +1,91 @@
-// // src/components/Map.js
-// import React from "react";
-// import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import React, { useState,useEffect } from 'react'
+import mappic from '../assets/mapNear.svg';
+import {IoLocationOutline,IoCallOutline} from 'react-icons/io5';
+import {GoDotFill} from 'react-icons/go';
+import {AiOutlineLeft,AiOutlineRight,AiOutlineSearch} from 'react-icons/ai';
+import Loading from './Loading';
+const Maps = () => {
 
-// import { GoogleMap, LoadScript } from "@react-google-maps/api";
+const[loading,setLoading]=useState(true);
 
-// const Map = () => {
-//   const containerStyle = {
-//     width: "100%",
-//     height: "400px",
-//   };
+useEffect(() => {
+  // Simulate loading delay (e.g., an API request) with setTimeout
+  setTimeout(() => {
+    setLoading(false); // Set loading to false when your content is ready
+  }, 2000); // Adjust the delay time as needed
+}, []);
 
-//   const center = {
-//     lat: 28.6141,
-//     lng: 77.3588,
-//   };
 
-//   return (
-//     <LoadScript
-//       googleMapsApiKey="AIzaSyBVy0pQZI8GNZ9fIih4MKOgg8OP-ZE96gI"
-//       onLoad={() => console.log("Google Maps loaded successfully")}
-//       onError={(error) => console.error("Error loading Google Maps:", error)}
-//     >
-//       ...
-//       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
-//         {/* Add map markers or other components here */}
-//       </GoogleMap>
-//     </LoadScript>
-//   );
-// };
-
-// export default Map;
-
-import React from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import { useState,useEffect } from "react";
-
-const Map = () => {
-  const containerStyle = {
-    width: "100%",
-    height: "400px",
-  };
-
-  const center = {
-    lat: 28.6141,
-    lng: 77.3588,
-  };
-  const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
-  const [error, setError] = useState(null);
-  const [hospitals, setHospitals] = useState([]);
-  useEffect(() => {
-    // Check if geolocation is available in the browser
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLatitude(position.coords.latitude);
-          setLongitude(position.coords.longitude);
-        },
-        (err) => {
-          setError(err.message);
-        }
-      );
-    } else {
-      setError("Geolocation is not available in your browser");
-    }
-  }, []);
   return (
-    <LoadScript
-      googleMapsApiKey="AIzaSyBVy0pQZI8GNZ9fIih4MKOgg8OP-ZE96gI"
-      onLoad={() => console.log("Google Maps loaded successfully")}
-      onError={(error) => console.error("Error loading Google Maps:", error)}
-    >
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
-        {/* Add a marker for a specific location */}
-        <Marker position={{ lat: latitude, lng: longitude}} />
-      </GoogleMap>
-    </LoadScript>
-  );
-};
+    <div>
+      {loading?<Loading/>:<div>
 
-export default Map;
+<input className='fixed top-[130px] left-[50px] text-[12px] bg-white flex justify-center text-center border-gray-700 border-2 items-center rounded-lg cursor-pointer w-[180px] h-[30px]' type='text' placeholder='Enter location manually'/>
+ 
+  <img src={mappic} className='w-[100vw] h-[67vh] object-cover mt-[-20px]'/>
+
+  <div className='flex justify-center items-center m-auto h-[calc(33vh-80px)] font-light text-[14px]'>
+
+    <div><AiOutlineLeft/></div>
+
+      {/* fortis */}
+    <div className='bg-white w-1/4 flex flex-col justify-center items-start mx-5 p-1 px-10 rounded-lg'>
+      <div className='font-semibold my-2'>
+        Fortis Hospital
+      </div>
+      <div className='flex '>
+        <span><IoLocationOutline/></span><span className='ml-2'>B-22 Sector 62, Noida, Uttar Pradesh 201301</span>
+        </div>
+      <div className='flex flex-row justify-center items-center'>
+        <span><IoCallOutline/></span><span className='ml-2'>0120 430 0222</span>
+        </div>
+      <div className='flex text-bgcolor flex-row justify-center items-center'>
+        <span><GoDotFill/></span><span className='ml-1'>Live bed status</span>
+        </div>
+      <div className='mx-4'>191 beds available</div>
+    </div>
+
+
+    {/* apollo */}
+    <div className='bg-white w-1/4 flex flex-col justify-center items-start mx-5 p-1 px-10 rounded-lg'>
+      <div className='font-semibold my-2'>
+        Apollo Hospitals Noida
+      </div>
+      <div className='flex '>
+        <span><IoLocationOutline/></span><span className=''> Kamal Marg, Block B, S-52, Noida, Uttar Pradesh 201307</span>
+        </div>
+      <div className='flex flex-row justify-center items-center'>
+        <span><IoCallOutline/></span><span className='ml-2'>0120 249 8801</span>
+        </div>
+      <div className='flex text-bgcolor flex-row justify-center items-center'>
+        <span><GoDotFill/></span><span className='ml-1'>Live bed status</span>
+        </div>
+      <div className='mx-4'>126 beds available</div>
+    </div>
+
+    {/* max */}
+    <div className='bg-white w-1/4 flex flex-col justify-center items-start mx-5 p-1 px-10 rounded-lg'>
+      <div className='font-semibold my-2'>
+        Max Multi Speciality Centre
+      </div>
+      <div className='flex '>
+        <span><IoLocationOutline/></span><span className=''>A364, A Block, Pocket A, Sector 19, Noida, 201301 </span>
+        </div>
+      <div className='flex flex-row justify-center items-center'>
+        <span><IoCallOutline/></span><span className='ml-2'>0120 662 9999</span>
+        </div>
+      <div className='flex text-bgcolor flex-row justify-center items-center'>
+        <span><GoDotFill/></span><span className='ml-1'>Live bed status</span>
+        </div>
+      <div className='mx-4'>69 beds available</div>
+    </div>
+
+  <div><AiOutlineRight/></div>
+
+  </div>
+</div>}
+    </div>
+  )
+}
+
+export default Maps
