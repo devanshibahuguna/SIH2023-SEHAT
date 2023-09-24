@@ -29,7 +29,16 @@ const HeartProblem = () => {
     setConcernHeart("Fainting");
   }
   const sendHeart=async()=>{
-
+    const final=await fetch('http://localhost:5000/api/heartConcern',{
+      method:"POST",
+      headers:{
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify(concernHeart)
+  })
+    if (final.ok){
+      console.log(final)
+    }
   }
   return (
     <div>

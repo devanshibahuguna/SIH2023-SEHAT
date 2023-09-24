@@ -45,11 +45,49 @@ def upload_image():
         # Example: file.save('uploads/' + file.filename)
 
     return 'Images uploaded successfully'
-@app.route("/api/receive", methods=['POST'])
-def form():
+@app.route("/api/receiveBody/1", methods=['POST'])
+def formBody():
+    global adhar_Number
     files = request.files['audio']
     try:
-        storage.child("Audio/file1.wav").put(files)
+        storage.child(str(adhar_Number)).child("Body").child("file1.wav").put(files)
+        file_url = storage.child(str(adhar_Number)+"/Body/file1.wav").get_url(None)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Body Audio").child("file1").child("url").set(file_url)
+        return jsonify({'message': 'File uploaded successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+# The audio sending functions Body
+@app.route("/api/receiveBody/2", methods=['POST'])
+def form2Body():
+    global adhar_Number
+    files = request.files['audio']
+    try:
+        storage.child(str(adhar_Number)).child("Body").child("file2.wav").put(files)
+        file_url = storage.child(str(adhar_Number)+"/Body/file2.wav").get_url(None)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Body Audio").child("file2").child("url").set(file_url)
+        return jsonify({'message': 'File uploaded successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+@app.route("/api/receiveBody/3", methods=['POST'])
+def form3Body():
+    global adhar_Number
+    files = request.files['audio']
+    try:
+        storage.child(str(adhar_Number)).child("Body").child("file3.wav").put(files)
+        file_url = storage.child(str(adhar_Number)+"/Body/file3.wav").get_url(None)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Body Audio").child("file3").child("url").set(file_url)
+        return jsonify({'message': 'File uploaded successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+@app.route("/api/receiveBody/4", methods=['POST'])
+def form4Body():
+    global adhar_Number
+    files = request.files['audio']
+    try:
+        storage.child(str(adhar_Number)).child("Body").child("file4.wav").put(files)
+        file_url = storage.child(str(adhar_Number)+"/Body/file4.wav").get_url(None)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Body Audio").child("file4").child("url").set(file_url)
         return jsonify({'message': 'File uploaded successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -122,7 +160,14 @@ def selectedButtons_data():
     submit_data=request.get_json()
     print(submit_data)
     global adhar_Number
-    db.child("Patients").child(adhar_Number).child("Checkup").child("Symptoms").set(submit_data)
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Body Symptoms").set(submit_data)
+    return 'Done' , 201
+@app.route('/api/heartConcern',methods=['POST'])
+def heartConcern_data():
+    submit_data=request.get_json()
+    print(submit_data)
+    global adhar_Number
+    db.child("Patients").child(adhar_Number).child("Checkup").child("Heart Concern").set(submit_data)
     return 'Done' , 201
 @app.route('/api/selectedSkin',methods=['POST'])
 def selectedSkin_data():
