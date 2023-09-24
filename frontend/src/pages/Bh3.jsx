@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import RecordVoiceBody from '../components/RecordVoiceBody';
+import RecordVoiceBody1 from '../components/RecordVoiceBody1';
 
 const Bh3 = () => {
   return (
@@ -18,7 +18,7 @@ const Bh3 = () => {
           </span>
         </div>
 
-        <RecordVoiceBody/>
+        <RecordVoiceBody1/>
       </div>
 
       {/* button */}
