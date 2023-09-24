@@ -91,6 +91,96 @@ def form4Body():
         return jsonify({'message': 'File uploaded successfully'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+#Funtions to send Diabetes data
+@app.route("/api/receiveDiabetes/1", methods=['POST'])
+def formDiabetes():
+    global adhar_Number
+    files = request.files['audio']
+    try:
+        storage.child(str(adhar_Number)).child("Diabetes").child("file1.wav").put(files)
+        file_url = storage.child(str(adhar_Number)+"/Diabetes/file1.wav").get_url(None)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes Audio").child("file1").child("url").set(file_url)
+        return jsonify({'message': 'File uploaded successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+@app.route("/api/receiveDiabetes/2", methods=['POST'])
+def formDiabetes2():
+    global adhar_Number
+    files = request.files['audio']
+    try:
+        storage.child(str(adhar_Number)).child("Diabetes").child("file2.wav").put(files)
+        file_url = storage.child(str(adhar_Number)+"/Diabetes/file2.wav").get_url(None)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes Audio").child("file2").child("url").set(file_url)
+        return jsonify({'message': 'File uploaded successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+@app.route("/api/receiveDiabetes/3", methods=['POST'])
+def formDiabetes3():
+    global adhar_Number
+    files = request.files['audio']
+    try:
+        storage.child(str(adhar_Number)).child("Diabetes").child("file3.wav").put(files)
+        file_url = storage.child(str(adhar_Number)+"/Diabetes/file3.wav").get_url(None)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes Audio").child("file3").child("url").set(file_url)
+        return jsonify({'message': 'File uploaded successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+@app.route("/api/receiveDiabetes/4", methods=['POST'])
+def formDiabetes4():
+    global adhar_Number
+    files = request.files['audio']
+    try:
+        storage.child(str(adhar_Number)).child("Diabetes").child("file4.wav").put(files)
+        file_url = storage.child(str(adhar_Number)+"/Diabetes/file4.wav").get_url(None)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Diabetes Audio").child("file4").child("url").set(file_url)
+        return jsonify({'message': 'File uploaded successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+#Functions to send skin audio data :
+@app.route("/api/receiveSkin/1", methods=['POST'])
+def formSkin():
+    global adhar_Number
+    files = request.files['audio']
+    try:
+        storage.child(str(adhar_Number)).child("Skin").child("file1.wav").put(files)
+        file_url = storage.child(str(adhar_Number)+"/Skin/file1.wav").get_url(None)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Skin Audio").child("file1").child("url").set(file_url)
+        return jsonify({'message': 'File uploaded successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+@app.route("/api/receiveSkin/2", methods=['POST'])
+def formSkin2():
+    global adhar_Number
+    files = request.files['audio']
+    try:
+        storage.child(str(adhar_Number)).child("Skin").child("file2.wav").put(files)
+        file_url = storage.child(str(adhar_Number)+"/Skin/file2.wav").get_url(None)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Skin Audio").child("file2").child("url").set(file_url)
+        return jsonify({'message': 'File uploaded successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+@app.route("/api/receiveSkin/3", methods=['POST'])
+def formSkin3():
+    global adhar_Number
+    files = request.files['audio']
+    try:
+        storage.child(str(adhar_Number)).child("Skin").child("file3.wav").put(files)
+        file_url = storage.child(str(adhar_Number)+"/Skin/file3.wav").get_url(None)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Skin Audio").child("file3").child("url").set(file_url)
+        return jsonify({'message': 'File uploaded successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+@app.route("/api/receiveSkin/4", methods=['POST'])
+def formSkin4():
+    global adhar_Number
+    files = request.files['audio']
+    try:
+        storage.child(str(adhar_Number)).child("Skin").child("file4.wav").put(files)
+        file_url = storage.child(str(adhar_Number)+"/Skin/file4.wav").get_url(None)
+        db.child("Patients").child(adhar_Number).child("Checkup").child("Skin Audio").child("file4").child("url").set(file_url)
+        return jsonify({'message': 'File uploaded successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 #Function to send data to the firebase
 def sendFire():
     data=999999999999

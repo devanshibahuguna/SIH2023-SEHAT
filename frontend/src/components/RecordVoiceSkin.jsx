@@ -38,7 +38,15 @@ function RecordVoiceSkin() {
       audioStream.current.getTracks().forEach((track) => track.stop());
     }
   };
-
+  const AudioSending=async()=>{
+    const audioURL=new Blob(audioChunks,{type:"audio/wav"})
+      var data=new FormData()
+      data.append('audio',audioURL)
+      const sending_audio=await fetch('http://localhost:5000/api/receiveSkin/1', {
+      method: 'POST',
+      body: data
+    })
+  };
   return (
     <div className="audio-recorder">
       {isRecording ? (
@@ -56,7 +64,7 @@ function RecordVoiceSkin() {
           Start Recording
         </Button>
       )}
-      {audioChunks.length > 0 && (
+      {audioChunks.length > 0 && AudioSending()&& (
         <audio className='mt-8'controls>
           <source src={URL.createObjectURL(new Blob(audioChunks, { type: 'audio/wav' }))} />
         </audio>
