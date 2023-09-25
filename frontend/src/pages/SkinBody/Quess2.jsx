@@ -1,8 +1,8 @@
 import React,{useState} from 'react'
-import RecordVoiceSkin from '../../components/RecordVoiceSkin';
 import { Link } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 import {HiSpeakerWave} from 'react-icons/hi2';
+import RecordVoiceSkin2 from '../../components/RecordVoiceSkin2';
 
 const Quess2 = () => {
   const [color,setColor]=useState('bg-color');
@@ -42,7 +42,7 @@ const Quess2 = () => {
         </div>
         
         <div>
-            <RecordVoiceSkin/>
+            <RecordVoiceSkin2/>
         </div>
 
         {/* button */}
