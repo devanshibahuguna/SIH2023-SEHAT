@@ -42,6 +42,9 @@ import Ques4 from "./pages/QuestionsBody/Ques4";
 import Ques2Dia from "./pages/DiabetesBody/Ques2";
 import Ques3Dia from "./pages/DiabetesBody/Ques3";
 import Ques4Dia from "./pages/DiabetesBody/Ques4";
+import Quess2 from "./pages/SkinBody/Quess2";
+import Quess3 from "./pages/SkinBody/Quess3";
+import Quess4 from "./pages/SkinBody/Quess4";
 function App() {
   return (
     <BrowserRouter>
@@ -89,6 +92,9 @@ function App() {
         <Route path="/diaques2" element={<Ques2Dia/>} />
         <Route path="/diaques3" element={<Ques3Dia/>} />
         <Route path="/diaques4" element={<Ques4Dia/>} />
+        <Route path="/skinques2" element={<Quess2/>} />
+        <Route path="/skinques3" element={<Quess3/>} />
+        <Route path="/skinques4" element={<Quess4/>} />
       </Routes>
       </NoteState>
     </BrowserRouter>
