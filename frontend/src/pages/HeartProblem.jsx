@@ -3,115 +3,71 @@ import Navbar from '../components/Navbar'
 import HeartImg from '../assets/HeartImg.svg';
 import { Link } from 'react-router-dom';
 const HeartProblem = () => {
-  const [concernHeart,setConcernHeart]=useState("");
-  const handleChest=()=>{
-    setConcernHeart("Chest Pain");
-  }
-  const handleShort=()=>{
-    setConcernHeart("Shortness of Breath");
-  }
-  const handleFatigue=()=>{
-    setConcernHeart("Fatigue");
-  }
-  const handleRapid=()=>{
-    setConcernHeart("Rapid Heart Beat");
-  }
-  const handleNausea=()=>{
-    setConcernHeart("Nausea");
-  }
-  const handleSweats=()=>{
-    setConcernHeart("Cold Sweats");
-  }
-  const handleHighBP=()=>{
-    setConcernHeart("High Blood Pressure");
-  }
-  const handleFainting=()=>{
-    setConcernHeart("Fainting");
-  }
-  const sendHeart=async()=>{
-    const final=await fetch('http://localhost:5000/api/heartConcern',{
-      method:"POST",
-      headers:{
-      'Content-Type':'application/json'
-    },
-    body: JSON.stringify(concernHeart)
-  })
-    if (final.ok){
-      console.log(final)
+
+  const[color,setColor]=useState(false);
+  const [selectedButtons, setSelectedButtons] = useState([]);
+
+  // Function to handle button clicks
+  const handleButtonClick = (buttonValue) => {
+    // Check if the button is already selected
+    if (selectedButtons.includes(buttonValue)) {
+      // If selected, remove it from the array
+      setColor(false);
+      setSelectedButtons(selectedButtons.filter((value) => value !== buttonValue));
+    } else {
+      // If not selected, add it to the array
+      setColor(true);
+      setSelectedButtons([...selectedButtons, buttonValue]);
     }
-  }
+  };
+
+  // An array of button values
+  const buttonValues = ["Chest Pain", "Shortness of Breath", "Rapid Heart Beat","Nausea","Cold Sweats","High Blood Pressure","Fainting","Fatigue",];
+  
   return (
     <div>
       <Navbar url='/concern1' loginUser='true' title='Heart Checkup' />
 
-      <div className='w-[100vw]  flex flex-col items-center text-center font-bold bg-bgall h-[calc(100vh-100px)]'>
-
-            <div>
-                <div className='text-[19px] mt-8'>
-                    Please Choose your concern
-                </div>
-            </div>
-        {/* first row */}
-        <div className='flex justify-between mt-10'>
-
-          <div className='flex flex-col justify-center items-center' onClick={handleChest}>
-          <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-            <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Chest Pain</div>
-          </div>
-
-          <div className='flex flex-col justify-center items-center mx-16' onClick={handleShort}>
-            <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-            <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Shortness of Breath</div>
-          </div>
-
-          <div className='flex flex-col justify-center items-center mr-16' onClick={handleFatigue}>
-            <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-            <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Fatigue
-</div>
-          </div>
-
-          <div className='flex flex-col justify-center items-center mr-16' onClick={handleRapid}>
-            <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-            <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Rapid Heartbeat </div>
-          </div>
-          
+      <div className="w-[100vw]  flex flex-col items-center text-center font-bold bg-bgall h-[calc(100vh-100px)]">
+      
+      <div className=" mt-[60px] top-[160px] flex flex-col justify-center items-center">
+        <div className="">
+          <span className="mr-2 font-[600] text-[18px]">
+            Please select the problems you are facing
+          </span>
         </div>
-
-
-        {/* second row */}
-        <div className='flex justify-between mt-20'>
-
-<div className='flex flex-col justify-center items-center' onClick={handleNausea}>
-  <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-  <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Nausea </div>
-</div>
-
-<div className='flex flex-col justify-center items-center mx-16' onClick={handleSweats}>
-  <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-  <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Cold Sweats
-</div>
-</div>
-
-<div className='flex flex-col justify-center items-center mr-16' onClick={handleHighBP}>
-  <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-  <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>High Blood Pressure </div>
-</div>
-
-<div className='flex flex-col justify-center items-center mr-16' onClick={handleFainting}>
-  <img className='w-[167px] h-[164px] top-[280px] left-[222px] hover:drop-shadow-lg' src={HeartImg} />
-  <div className='w-[256px] h-[33px] top-[539px] left-[207px] font-[600] text-[17px] leading-[33px] mt-1'>Fainting </div>
-</div>
-
-</div>
-
- {/* button */}
- <Link to="/heartInputs">
-          <button className="mt-[30px] bg-bluebtn py-3 px-12 text-white rounded-lg fixed right-[20px]" onClick={sendHeart}>
-            Proceed
-          </button>
-        </Link>
-
       </div>
+
+{/* all problems */}
+<div className='mt-10'>
+      {buttonValues.map((buttonValue, index) => (
+        <button
+          key={index}
+          onClick={() => handleButtonClick(buttonValue)}
+          className={selectedButtons.includes(buttonValue) ? 'selected' : 'notselected'}
+        // className='w-[200px] bg-[#DEF0FF] py-2 mx-20 my-4 rounded-full'
+        >
+          {buttonValue}
+        </button>
+      ))}
+
+      {/* to see btns selected */}
+      <div className='w-[100vw] flex flex-col text-center mt-10 h-[20vh]'>
+        <p className='text-[#0038A5]'>Selected Problems:</p>
+        <ul className='flex mx-auto my-4'>
+          {selectedButtons.map((button, index) => (
+            <li className=' mx-2 ' key={index}>{button}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+      
+      <Link to="/body">
+        <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg right-[60px] bottom-[60px] fixed" >
+          Next
+        </button>
+      </Link>
+    </div>
     </div>
   )
 }
