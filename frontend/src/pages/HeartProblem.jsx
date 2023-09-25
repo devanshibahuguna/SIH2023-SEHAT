@@ -62,7 +62,7 @@ const HeartProblem = () => {
       </div>
     </div>
       
-      <Link to="/body">
+      <Link to="/heartInputs">
         <button className="mt-[40px] bg-bluebtn py-3 px-12 text-white rounded-lg right-[60px] bottom-[60px] fixed" >
           Next
         </button>
