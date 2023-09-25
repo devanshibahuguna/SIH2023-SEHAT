@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import RecordVoice from '../../components/RecordVoice';
+import RecordVoice3 from '../../components/RecordVoice3';
 import { Link } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 import {HiSpeakerWave} from 'react-icons/hi2';
@@ -44,7 +44,7 @@ const Ques3 = () => {
         </div>
         
         <div>
-            <RecordVoice/>
+            <RecordVoice3/>
         </div>
 
         {/* button */}
