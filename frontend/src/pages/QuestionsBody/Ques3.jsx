@@ -1,24 +1,31 @@
-import React, { useState } from 'react'
+import React,{useState} from 'react'
 import RecordVoiceBody1 from '../../components/RecordVoiceBody1'
 import { Link } from 'react-router-dom'
+import Navbar from '../../components/Navbar'
 import {HiSpeakerWave} from 'react-icons/hi2';
 
-const Ques1 = () => {
+const Ques3 = () => {
 
-const [color,setColor]=useState('bg-color');
+    
+  const [color,setColor]=useState('bg-color');
 
-const changeColor=()=>{
-setColor('gray-600');
-}
-
+  const changeColor=()=>{
+  setColor('gray-600');
+  }
+  
   return (
+    <div>
+    <Navbar url="/bodyques2" loginUser="true" title="Body Health" />
+
+    <div className="w-[100vw]  flex flex-col  bg-bgall h-[calc(100vh-100px)]">
+
     <div className='flex text-center'>
         
         {/* questions */}
         <div className='w-1/5 text-center pt-10  border-r-4 border-gray-300 h-[calc(100vh-100px)]'>
             <div className='bg-[#D1E8FF] py-3 text-gray-600'>Question 1</div>
-            <div className=' py-3 text-gray-600'>Question 2</div>
-            <div className=' py-3 text-gray-600'>Question 3</div>
+            <div className='bg-[#D1E8FF]  py-3 text-gray-600'>Question 2</div>
+            <div className='bg-[#D1E8FF] py-3 text-gray-600'>Question 3</div>
             <div className=' py-3 text-gray-600'>Question 4
             </div>
         </div>
@@ -28,7 +35,7 @@ setColor('gray-600');
        
         <div className='flex justify-center items-center flex-col' >
           <span className=" flex justify-center items-center font-[600] text-black text-[18px]">
-          Question 1 
+          Question 3
           <span className={`text-bgcolor font-bold text-[30px] mx-4 cursor-pointer text-${color}`} onClick={changeColor}><HiSpeakerWave/></span>
           </span>
           <span className=" font-[600] mt-[20px] text-gray-400 text-[18px]">
@@ -41,7 +48,7 @@ setColor('gray-600');
         </div>
 
         {/* button */}
-        <Link to="/bodyques2">
+        <Link to="/bodyques4">
         <button className="mt-[40px] fixed botton-[80px] right-[80px] bg-bluebtn py-3 px-12 text-white rounded-lg ">
           Proceed
         </button>
@@ -53,7 +60,10 @@ setColor('gray-600');
         </div>
 
     </div>
+
+    </div>
+    </div>
   )
 }
 
-export default Ques1
+export default Ques3

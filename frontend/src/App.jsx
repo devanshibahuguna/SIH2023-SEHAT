@@ -37,6 +37,8 @@ import DiabetesDoctor from "./pages/DiabetesDoctor";
 import DiabetesAudio from "./pages/DiabetesAudio";
 import NoteState from "./context/notes/NoteState";
 import Ques2 from "./pages/QuestionsBody/Ques2";
+import Ques3 from "./pages/QuestionsBody/Ques3";
+import Ques4 from "./pages/QuestionsBody/Ques4";
 function App() {
   return (
     <BrowserRouter>
@@ -79,6 +81,8 @@ function App() {
         <Route path="/diabetesAudioRecord" element={<DiabetesAudio/>} />
         <Route path="/diabetesDoctor" element={<DiabetesDoctor/>} />
         <Route path="/bodyques2" element={<Ques2/>} />
+        <Route path="/bodyques3" element={<Ques3/>} />
+        <Route path="/bodyques4" element={<Ques4/>} />
       </Routes>
       </NoteState>
     </BrowserRouter>

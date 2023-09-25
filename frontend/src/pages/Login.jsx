@@ -38,7 +38,7 @@ const Login = () => {
           <div className='font-[600] text-[24px] leading-[42px]'>Login with Aadhar / Abha Number</div>
         </div>
 
-        <div className='flex'>
+        <div className='flex justify-evenly'>
         <div className='mt-8'>
           <div className='text-[17px]'>Enter your Aadhar number</div>
 
@@ -50,9 +50,11 @@ const Login = () => {
             <button type='submit' className='bg-bluebtn rounded-lg px-8 py-2 my-4 text-white font-[100] ' onClick={sendAdhar}>Proceed</button>
           </form>
         </div>
-
+          <div className='mt-20 pl-48'>
+            OR
+          </div>
         <div className='mt-8 ml-60'>
-          <div className='text-[17px]'>Enter your Aabha number</div>
+          <div className='text-[17px]'>Enter your Abha number</div>
 
           <form >
             <input type="text" required={true} onChange={handleChange_adhar}
