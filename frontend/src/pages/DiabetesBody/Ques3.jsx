@@ -3,6 +3,7 @@ import RecordVoice3 from '../../components/RecordVoice3';
 import { Link } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 import {HiSpeakerWave} from 'react-icons/hi2';
+import AutoPlayAudio from '../../components/AudioPlay';
 
 const Ques3 = () => {
     const [color,setColor]=useState('bg-color');
@@ -33,10 +34,10 @@ const Ques3 = () => {
         {/* recording */}
         <div className='flex flex-col h-[calc(100vh-100px)] items-center mt-[70px] text-center ml-[370px]'>
        
-        <div className='flex justify-center items-center flex-col' >
-          <span className=" flex justify-center items-center font-[600] text-black text-[18px]">
+        <div className='flex justify-center items-center flex-col text-center' >
+          <span className=" font-[600] text-black text-[18px]">
           Question 3
-          <span className={`text-bgcolor font-bold text-[30px] mx-4 cursor-pointer text-${color}`} onClick={changeColor}><HiSpeakerWave/></span>
+          <span> <AutoPlayAudio audioUrl='/diabetes-3.mp3' /></span>
           </span>
           <span className=" font-[600] mt-[20px] text-gray-400 text-[18px]">
           Please press the button to record your answer
