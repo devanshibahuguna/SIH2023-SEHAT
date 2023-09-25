@@ -39,6 +39,9 @@ import NoteState from "./context/notes/NoteState";
 import Ques2 from "./pages/QuestionsBody/Ques2";
 import Ques3 from "./pages/QuestionsBody/Ques3";
 import Ques4 from "./pages/QuestionsBody/Ques4";
+import Ques2Dia from "./pages/DiabetesBody/Ques2";
+import Ques3Dia from "./pages/DiabetesBody/Ques3";
+import Ques4Dia from "./pages/DiabetesBody/Ques4";
 function App() {
   return (
     <BrowserRouter>
@@ -83,6 +86,9 @@ function App() {
         <Route path="/bodyques2" element={<Ques2/>} />
         <Route path="/bodyques3" element={<Ques3/>} />
         <Route path="/bodyques4" element={<Ques4/>} />
+        <Route path="/diaques2" element={<Ques2Dia/>} />
+        <Route path="/diaques3" element={<Ques3Dia/>} />
+        <Route path="/diaques4" element={<Ques4Dia/>} />
       </Routes>
       </NoteState>
     </BrowserRouter>
