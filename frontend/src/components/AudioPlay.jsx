@@ -76,3 +76,35 @@ setColor('gray-600');
 }
 
 export default AutoPlayAudio;
+
+// Alternative code
+// import React, { useEffect, useRef } from 'react';
+
+// function App() {
+//   const audioRef = useRef(null);
+
+//   // Play audio when the component mounts
+//   useEffect(() => {
+//     audioRef.current.play();
+//   }, []);
+
+//   const handleRestartClick = () => {
+//     if (audioRef.current) {
+//       audioRef.current.currentTime = 0;
+//       audioRef.current.play();
+//     }
+//   };
+
+//   return (
+//     <div className="App">
+//       <h1>Auto-Play Audio</h1>
+//       <button onClick={handleRestartClick}>Restart Audio</button>
+//       <audio ref={audioRef} autoPlay>
+//         <source src="audio.mp3" type="audio/mpeg" />
+//         Your browser does not support the audio element.
+//       </audio>
+//     </div>
+//   );
+// }
+
+// export default App;
