@@ -12,7 +12,7 @@ const Concern1 = () => {
   //const secretKey=cryptoRandomString({length:64,type:'hex'});
   const handleGeneral=async()=>{
     //const encryptedValue=CryptoJS.AES.encrypt("General Health Checkup",secretKey).toString();
-    const final=await fetch('http://localhost:5000/api/option',{
+    const final=await fetch('https://sehat-backend.onrender.com/api/option',{
       method:"POST",
       headers:{
       'Content-Type':'application/json'

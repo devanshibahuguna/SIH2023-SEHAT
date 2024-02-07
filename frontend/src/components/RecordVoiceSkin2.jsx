@@ -42,7 +42,7 @@ function RecordVoiceSkin2() {
     const audioURL=new Blob(audioChunks,{type:"audio/wav"})
       var data=new FormData()
       data.append('audio',audioURL)
-      const sending_audio=await fetch('http://localhost:5000/api/receiveSkin/2', {
+      const sending_audio=await fetch('https://sehat-backend.onrender.com/api/receiveSkin/2', {
       method: 'POST',
       body: data
     })

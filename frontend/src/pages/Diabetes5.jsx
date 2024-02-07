@@ -9,7 +9,7 @@ const Diabetes5 = () => {
     setBmi(event.target.value)
   }
   const sendBmi=async()=>{
-    const final=await fetch('http://localhost:5000/api/bmi',{
+    const final=await fetch('https://sehat-backend.onrender.com/api/bmi',{
       method:"POST",
       headers:{
       'Content-Type':'application/json'

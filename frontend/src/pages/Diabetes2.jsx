@@ -8,7 +8,7 @@ const Diabetes2 = () => {
     setGlucose(event.target.value)
   }
   const sendGluc=async()=>{
-    const final=await fetch('http://localhost:5000/api/gluc',{
+    const final=await fetch('https://sehat-backend.onrender.com/api/gluc',{
       method:"POST",
       headers:{
       'Content-Type':'application/json'

@@ -9,7 +9,7 @@ const Diabetes4 = () => {
     setInsulin(event.target.value)
   }
   const sendInsulin=async()=>{
-    const final=await fetch('http://localhost:5000/api/insulin',{
+    const final=await fetch('https://sehat-backend.onrender.com/api/insulin',{
       method:"POST",
       headers:{
       'Content-Type':'application/json'

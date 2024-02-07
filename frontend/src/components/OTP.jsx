@@ -14,7 +14,7 @@ function Forgot_password() {
     }
   };
   const getOTP=async()=>{
-    const final=await fetch('http://localhost:5000/api/otp',{
+    const final=await fetch('https://sehat-backend.onrender.com/api/otp',{
       method:"POST",
       headers:{
       'Content-Type':'application/json'

@@ -9,7 +9,7 @@ const Diabetes3 = () => {
     setBPLevel(event.target.value)
   }
   const sendBPL=async()=>{
-    const final=await fetch('http://localhost:5000/api/bpl',{
+    const final=await fetch('https://sehat-backend.onrender.com/api/bpl',{
       method:"POST",
       headers:{
       'Content-Type':'application/json'

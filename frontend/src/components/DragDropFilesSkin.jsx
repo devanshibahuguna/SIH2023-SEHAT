@@ -14,7 +14,7 @@ const DragDropFiles = () => {
   };
   
   // send files to the server // learn from my other video
-  const handleUpload = () => {
+  const handleUpload =async () => {
     const formData = new FormData();
     formData.append("Files", files);
     console.log(formData.getAll())
@@ -24,6 +24,20 @@ const DragDropFiles = () => {
     //     body: formData
     //   }  
     // )
+    try {
+      const response = await fetch('https://sehat-backend.onrender.com/api/upload_cataract', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        console.log('Image uploaded successfully');
+      } else {
+        console.error('Failed to upload image');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   if (files) return (

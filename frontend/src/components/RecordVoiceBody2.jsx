@@ -42,7 +42,7 @@ function RecordVoiceBody2() {
     const audioURL=new Blob(audioChunks,{type:"audio/wav"})
       var data=new FormData()
       data.append('audio',audioURL)
-      const sending_audio=await fetch('http://localhost:5000/api/receiveBody/2', {
+      const sending_audio=await fetch('https://sehat-backend.onrender.com/api/receiveBody/2', {
       method: 'POST',
       body: data
     })

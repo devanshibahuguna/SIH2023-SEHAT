@@ -43,7 +43,7 @@ function AudioRecorder() {
     const audioURL=new Blob(audioChunks,{type:"audio/wav"})
       var data=new FormData()
       data.append('audio',audioURL)
-      const sending_audio=await fetch('http://localhost:5000/api/receiveDiabetes/1', {
+      const sending_audio=await fetch('https://sehat-backend.onrender.com/api/receiveDiabetes/1', {
       method: 'POST',
       body: data
     })

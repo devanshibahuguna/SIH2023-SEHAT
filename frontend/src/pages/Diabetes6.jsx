@@ -9,7 +9,7 @@ const Diabetes6 = () => {
     setThickness(event.target.value)
   }
   const sendThick=async()=>{
-    const final=await fetch('http://localhost:5000/api/thick',{
+    const final=await fetch('https://sehat-backend.onrender.com/api/thick',{
       method:"POST",
       headers:{
       'Content-Type':'application/json'

@@ -7,7 +7,7 @@ const Login = () => {
   const {adhar , handleChange_adhar}=useContext(noteContext);
   const sendAdhar=async(event)=>{
     event.preventDefault()
-    const final=await fetch('http://localhost:5000/api/adhar',{
+    const final=await fetch('https://sehat-backend.onrender.com/api/adhar',{
       method:"POST",
       headers:{
       'Content-Type':'application/json'

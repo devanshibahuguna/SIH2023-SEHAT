@@ -53,7 +53,7 @@ const HeartInputs = () => {
         setThal(event.target.value);
     }
     const SubmitHeartData=async()=>{
-        const final=await fetch('http://localhost:5000/api/heartInputData',{
+        const final=await fetch('https://sehat-backend.onrender.com/api/heartInputData',{
       method:"POST",
       headers:{
       'Content-Type':'application/json'

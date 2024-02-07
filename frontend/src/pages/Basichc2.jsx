@@ -14,7 +14,7 @@ const Basichc2 = () => {
 };
   const submitHeight=async()=>{
     //const encryptedValue=CryptoJS.AES.encrypt(height,secretKey).toString();
-    const final=await fetch('http://localhost:5000/api/height',{
+    const final=await fetch('https://sehat-backend.onrender.com/api/height',{
       method:"POST",
       headers:{
       'Content-Type':'application/json'

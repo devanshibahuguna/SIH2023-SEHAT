@@ -12,7 +12,7 @@ const Basichc3 = () => {
 };
 const submitWeight=async()=>{
   //const encryptedValue=CryptoJS.AES.encrypt(weight,secretKey).toString();
-  const final=await fetch('http://localhost:5000/api/weight',{
+  const final=await fetch('https://sehat-backend.onrender.com/api/weight',{
     method:"POST",
     headers:{
     'Content-Type':'application/json'

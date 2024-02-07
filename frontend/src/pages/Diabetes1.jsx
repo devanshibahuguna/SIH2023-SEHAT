@@ -8,7 +8,7 @@ const Diabetes1 = () => {
     setPreg(event.target.value)
   }
   const sendPreg=async()=>{
-    const final=await fetch('http://localhost:5000/api/preg',{
+    const final=await fetch('https://sehat-backend.onrender.com/api/preg',{
       method:"POST",
       headers:{
       'Content-Type':'application/json'

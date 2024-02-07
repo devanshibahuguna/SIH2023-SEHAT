@@ -23,7 +23,7 @@ const DragDropFilesCataract = () => {
       formData.append("Files", files[i]);
     }
     try {
-      const response = await fetch('/api/upload_cataract', {
+      const response = await fetch('https://sehat-backend.onrender.com/api/upload_cataract', {
         method: 'POST',
         body: formData,
       });

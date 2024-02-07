@@ -9,7 +9,7 @@ const Diabetes7 = () => {
     setPedi(event.target.value)
   }
   const sendPedi=async()=>{
-    const final=await fetch('http://localhost:5000/api/pedi',{
+    const final=await fetch('https://sehat-backend.onrender.com/api/pedi',{
       method:"POST",
       headers:{
       'Content-Type':'application/json'

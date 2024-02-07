@@ -12,7 +12,7 @@ const Basichc6 = () => {
 };
 const submitSp=async()=>{
   //const encryptedValue=CryptoJS.AES.encrypt(sp,secretKey).toString();
-  const final=await fetch('http://localhost:5000/api/sp',{
+  const final=await fetch('https://sehat-backend.onrender.com/api/sp',{
     method:"POST",
     headers:{
     'Content-Type':'application/json'

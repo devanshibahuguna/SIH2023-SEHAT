@@ -12,7 +12,7 @@ const Basichc5 = () => {
 };
 const submitBeat=async()=>{
   //const encryptedValue=CryptoJS.AES.encrypt(beat,secretKey).toString();
-  const final=await fetch('http://localhost:5000/api/beat',{
+  const final=await fetch('https://sehat-backend.onrender.com/api/beat',{
     method:"POST",
     headers:{
     'Content-Type':'application/json'

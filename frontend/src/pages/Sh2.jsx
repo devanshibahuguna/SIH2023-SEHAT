@@ -20,7 +20,7 @@ const Sh2 = () => {
     }
   };
   const sendSkin=async()=>{
-    const final=await fetch('http://localhost:5000/api/selectedSkin',{
+    const final=await fetch('https://sehat-backend.onrender.com/api/selectedSkin',{
         method:"POST",
         headers:{
         'Content-Type':'application/json'

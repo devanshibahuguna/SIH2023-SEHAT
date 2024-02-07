@@ -20,7 +20,7 @@ const Bh2 = () => {
     }
   };
   const sendSelected=async()=>{
-      const final=await fetch('http://localhost:5000/api/selectedButtons',{
+      const final=await fetch('https://sehat-backend.onrender.com/api/selectedButtons',{
         method:"POST",
         headers:{
         'Content-Type':'application/json'

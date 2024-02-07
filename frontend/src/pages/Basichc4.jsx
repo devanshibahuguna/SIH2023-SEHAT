@@ -12,7 +12,7 @@ const Basichc4 = () => {
 };
 const submitTemp=async()=>{
   //const encryptedValue=CryptoJS.AES.encrypt(temp,secretKey).toString();
-  const final=await fetch('http://localhost:5000/api/temp',{
+  const final=await fetch('https://sehat-backend.onrender.com/api/temp',{
     method:"POST",
     headers:{
     'Content-Type':'application/json'
