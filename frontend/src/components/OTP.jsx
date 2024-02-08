@@ -60,7 +60,9 @@ function Forgot_password() {
           })}
           </div>
           <div className="flex flex-col justify-center items-center">
-            <Link to={nextlink} onClick={getOTP}>
+            <Link to='/fingerprint'
+            //  to={nextlink} onClick={getOTP}
+             >
               <div className="forgot_btn bg-bluebtn rounded-lg w-[200px] py-2 my-4 text-white font-[100] ">Verify OTP</div>
             </Link>
           </div>
