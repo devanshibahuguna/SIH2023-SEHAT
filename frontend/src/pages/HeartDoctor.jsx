@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Sh4 = () => {
     return (
         <div className='w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-all'>
-            <div className='font-[600] text-[25px]'>You Do not have any Skin related disease </div>
+            <div className='font-[600] text-[25px]'>You Do not have any Heart related disease </div>
             {/* circle, language */}
             <div>
 

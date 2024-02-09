@@ -4,7 +4,7 @@ import connectDoctor from '../assets/eSanjeevaniConnectDoctor.svg';
 const CataractDoctor = () => {
   return (
     <div className='w-[100vw] h-[100vh] flex flex-col justify-center items-center bg-all'>
-
+        <div className='font-[600] text-[25px]'>You Do not have any Cataract disease </div>
     {/* circle, language */}
     <div>
 

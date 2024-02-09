@@ -45,6 +45,7 @@ import Ques4Dia from "./pages/DiabetesBody/Ques4";
 import Quess2 from "./pages/SkinBody/Quess2";
 import Quess3 from "./pages/SkinBody/Quess3";
 import Quess4 from "./pages/SkinBody/Quess4";
+import HeartDoctor from "./pages/HeartDoctor"
 function App() {
   return (
     <BrowserRouter>
@@ -95,6 +96,7 @@ function App() {
         <Route path="/skinques2" element={<Quess2/>} />
         <Route path="/skinques3" element={<Quess3/>} />
         <Route path="/skinques4" element={<Quess4/>} />
+        <Route path="/heartDoctor" element={<HeartDoctor/>} />
       </Routes>
       </NoteState>
     </BrowserRouter>

@@ -184,7 +184,7 @@ const HeartInputs = () => {
         </div>
 
  {/* button */}
- <Link to="/heartInputs">
+ <Link to="/heartDoctor">
           <button className="mt-[30px] bg-bluebtn py-3 px-12 text-white rounded-lg fixed right-[20px] bottom-[20px]" onClick={SubmitHeartData}>
             Proceed
           </button>
